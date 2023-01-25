@@ -25,34 +25,23 @@ Comment.belongsTo(User, {
 
 // userpost & comment
 UserPost.hasMany(Comment, {
-    foreignKey: 'user_id',
+    foreignKey: 'post_id',
     onDelete: 'CASCADE'
 });
 
 Comment.belongsTo(UserPost, {
-    foreignKey: 'user_id'
+    foreignKey: 'post_id'
 });
 
-// user and hashtag
-User.hasMany(Hashtag, {
-    foreignKey: 'user_id',
+
+// Category & userpost
+UserPost.belongsTo(Category, {
+    foreignKey: 'category_id',
+});
+
+Category.hasMany(UserPost, {
+    foreignKey: 'category_id',
     onDelete: 'CASCADE'
 });
 
-Hashtag.hasMany(User, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-});
-
-// hashtag & userpost
-Hashtag.hasMany(UserPost, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-});
-
-UserPost.hasMany(Hashtag, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-});
-
-module.exports = { User, UserPost, Hashtag, Comment };
+module.exports = { User, UserPost, Category, Comment };
