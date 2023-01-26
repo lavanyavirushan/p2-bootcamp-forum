@@ -2,7 +2,10 @@
     {
         "userame": "Tom",
         "email": "Tom@test.com",
-        "password": "password123"
+        "password": "password123",
+        "fname": "test",
+        "lname": "test",
+        "status": "student"
     },
     {
         "userame": "Sally",
