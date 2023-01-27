@@ -1,12 +1,16 @@
 [
     {
         "title": "What is Lorem Ipsum?",
-        "body": "...",
-        "author": "Tom"
+        "description": "Tom",
+        "created_at": "",
+        "user_id": "1",
+        "category_id": "3"
     },
     {
-        "title": "How do I install express?",
-        "body": "...",
-        "author": "Sally"
+        "title": "What is Lorem Ipsum Ajax?",
+        "description": "Tom",
+        "created_at": "",
+        "user_id": "2",
+        "category_id": "5"
     }
 ]
