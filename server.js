@@ -6,6 +6,8 @@ const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 const sequelize = require('./config/connection');
+const swaggerUi = require('swagger-ui-express');
+swaggerDocument = require('./swagger.json');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 //Initilaize objects
 const app = express();
@@ -35,6 +37,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 //express will be able to use the controllers 
+app.use(
+  '/docs',
+  swaggerUi.serve, 
+  swaggerUi.setup(swaggerDocument)
+);
 app.use(routes);
 //sync the database
 sequelize.sync({ force: false }).then(() => {
