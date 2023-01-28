@@ -33,8 +33,8 @@ router.post('/login', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.username = userData.username;
       req.session.loggedIn = true;
-      //removeing the password from the return json object as it is a security risk
-      // delete userData.dataValues.password
+      //removing the password from the return json object as it is a security risk
+      delete userData.dataValues.password
       res.json({ user: userData, message: 'You are now logged in!' });
     });
 
@@ -44,8 +44,13 @@ router.post('/login', async (req, res) => {
 });
 
 router.get('/logout', (req, res) => {
-  res.clearCookie('connect.sid');
-  return res.status(200).redirect('/login');
+  if(req.session.loggedIn){
+    req.session.destroy(() => {
+      res.status(204).redirect('/login');
+    })
+  } else {
+    res.status(404).end();
+  }
 });
 
 router.post('/register', async (req, res) => {

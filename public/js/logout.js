@@ -3,11 +3,10 @@ const logout =async () =>  {
     method: 'get',
     credentials: 'include'
   });
-  alert(response.status);
   if (response.ok) {
     document.location.replace('/login');
   } else {
-    alert('Oh Oh logout failed somehow?');
+    console.warning(response.statusText);
   }
 }
 document.querySelector('.logoutBtn').addEventListener('click', logout);
