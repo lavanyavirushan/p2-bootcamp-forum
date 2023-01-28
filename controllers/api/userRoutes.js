@@ -33,8 +33,8 @@ router.post('/login', async (req, res) => {
       req.session.user_id = userData.id;
       req.session.username = userData.username;
       req.session.loggedIn = true;
-      //removeing the password from the return json object as it is a security risk
-      // delete userData.dataValues.password
+      //removing the password from the return json object as it is a security risk
+      delete userData.dataValues.password
       res.json({ user: userData, message: 'You are now logged in!' });
     });
 
