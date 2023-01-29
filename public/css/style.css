@@ -1,3 +1,50 @@
+html{
+    height: 100%;
+    color-scheme: dark !important;
+    background-color: #181a1b !important;
+}
+
+body {
+    color: rgb(209, 205, 199);
+    background-color: rgb(24, 26, 27);
+    -webkit-tap-highlight-color: transparent;
+}
+
+header{
+    background-color: #333739;
+    color: white;
+    font-family: 'Unbounded', serif;
+}
+.bg-light{
+    background-color: grey;    
+}
+.container-fluid{
+    background-color: grey;
+    padding: 4px;
+}
+
+.category-desc{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel-inner{
+    height:100vh;
+    width:100%;
+}
+.carousel-item :active{
+    max-height: 100%;
+}
+
+.d-block {
+    max-height: 100%;
+    object-fit: cover;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,transparent,#0006);
+}
+
 label {
     font-family: 'Unbounded', serif;
 }
@@ -16,4 +63,11 @@ label {
     background-color: green;
     color: white;
     border-color: darkgreen;
+}
+
+@media (min-width: 768px) {
+    .carousel .carousel-item img {
+        height: 350px;
+        object-fit: cover;
+    }
 }
