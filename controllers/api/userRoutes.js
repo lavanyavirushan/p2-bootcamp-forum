@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const session = require('express-session');
 const withAuth = require('../../utils/auth');
 
 router.post('/login', async (req, res) => {
@@ -27,12 +28,12 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
-
     // Create session variables based on the logged in user
     req.session.save(() => {
       req.session.user_id = userData.id;
-      req.session.logged_in = true;
-      //removeing the password from the return json object as it is a security risk
+      req.session.username = userData.username;
+      req.session.loggedIn = true;
+      //removing the password from the return json object as it is a security risk
       delete userData.dataValues.password
       res.json({ user: userData, message: 'You are now logged in!' });
     });
@@ -43,14 +44,10 @@ router.post('/login', async (req, res) => {
 });
 
 router.get('/logout', (req, res) => {
-    // #swagger.tags = ['User']
-    // #swagger.description = 'logout'
-  if (req.session.logged_in) {
-    // Remove the session variables\
+  if(req.session.loggedIn){
     req.session.destroy(() => {
-      res.status(204).end();
-    });
-
+      res.status(204).redirect('/login');
+    })
   } else {
     res.status(404).end();
   }
