@@ -5,7 +5,7 @@
     "description": "Bootcamp blog post for students for students to learn/share knowledge",
     "version": "1.0.0"
   },
-  "host": "localhost:3001",
+  "host": "localhost:80",
   "basePath": "/api",
   "schemes": [
     "http"
