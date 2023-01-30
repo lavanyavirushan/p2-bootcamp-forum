@@ -1,18 +1,21 @@
-{{!-- from activity 14.23 --}}
-<h2>Login</h2>
+<card class="card p-3" style="background-color:rgb(212, 190, 226);">
+  <form class="mb-2 login-form">
+      <div class="d-flex">
+          <h2 class="mx-auto">Login to Your Account</h2>
+      </div>
+      <div class="px-3 mx-5">
+          <input class="rounded m-1" type="text" id="username" name="username" placeholder=" Username" required><br>
+          <input class="rounded m-1" type="password" id="password" name="password" placeholder="password" required><br>
+          <div class="d-flex">
+              <button class="rounded mx-auto mt-2" id="submit" type="submit" value="Login">Login</button>
+          </div>
+      </div>
+  </form>
+  <button class="rounded mx-auto" style="background-color: powderblue;">Create Account</button>
+</card>
+<script
+  src="https://code.jquery.com/jquery-3.6.3.min.js"
+  integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+  crossorigin="anonymous"></script>
+<script src="./js/login.js"></script>
 
-<form class="form login-form">
-  <div class="form-group">
-    <label for="email-login">email:</label>
-    <input class="form-input" type="text" id="email-login" />
-  </div>
-  <div class="form-group">
-    <label for="password-login">password:</label>
-    <input class="form-input" type="password" id="password-login" />
-  </div>
-  <div class="form-group">
-    <button class="btn btn-primary" type="submit">login</button>
-  </div>
-</form>
-
-<script src="/js/login.js"></script>

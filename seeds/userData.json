@@ -1,6 +1,6 @@
 [
     {
-        "userame": "Tom",
+        "username": "Tom",
         "email": "Tom@test.com",
         "password": "password123",
         "fname": "test",
@@ -8,7 +8,7 @@
         "status": "student"
     },
     {
-        "userame": "Sally",
+        "username": "Sally",
         "email": "Sally@test.com",
         "password": "password123"
     }
