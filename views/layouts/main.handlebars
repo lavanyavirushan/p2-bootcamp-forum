@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-US-Compatible" content="IE=edge" />
-    <title>My Team</title>
+    <title>UofT Coding Bootcamp</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
@@ -44,10 +44,10 @@
                     </li>
                     {{#if loggedIn}}
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./accountpage">My Account</a>
+                        <a class="nav-link" aria-current="page" href="/account">My Account</a>
                     </li>
                     <li class="nav-item">
-                        <button class="nav-link logoutBtn">Logout</button>
+                        <button class="btn btn-danger nav-link btn-logout"><div class="btnText">Logout</div></button>
                     </li>
                     {{else}}
                     <li class="nav-item">
