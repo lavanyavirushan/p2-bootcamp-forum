@@ -9,6 +9,7 @@ const sequelize = require('./config/connection');
 const swaggerUi = require('swagger-ui-express');
 swaggerDocument = require('./swagger.json');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+require('dotenv').config();
 //Initilaize objects
 const app = express();
 const PORT = process.env.PORT || 3001;
