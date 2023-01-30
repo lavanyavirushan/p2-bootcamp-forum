@@ -1,12 +1,17 @@
 const swaggerAutogen = require('swagger-autogen')()
+require('dotenv').config();
+
+const HOST = process.env.HOST || "localhost";
 const PORT = process.env.PORT || 3001;
+
+console.log(HOST)
 const doc = {
     info: {
       title: 'Bootcamp Forum API',
       description: 'Bootcamp blog post for students for students to learn/share knowledge',
     },
     basePath: '/api',
-    host: `localhost:${PORT}`,
+    host: `${HOST}:${PORT}`,
     schemes: ['http'],
   };
 const outputFile = './swagger.json'

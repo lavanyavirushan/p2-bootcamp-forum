@@ -1,4 +1,4 @@
-<div class="card single-post">
+<div class="card single-post space-from-top">
     <div class="card-body">
         <form>
             <label for="post-title">Post Title</label>
@@ -9,14 +9,12 @@
             </div>
             <div class="buttons">
                 <button type="submit" class="btn btn-primary submit-form">Submit</button>
-                <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">Category</button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">JavaScript Code</a>
-                        <a class="dropdown-item" href="#">Node.js</a>
-                        <a class="dropdown-item" href="#">Express.js</a>
-                    </div>
-                </div>
+                <select  class ="form-select fancy-font btn-text" required>
+                    <option selected>Category</option>
+                    <option value="1">JavaScript Code</option>
+                    <option value="2">Node.js</option>
+                    <option value="3">Express.js</option>
+                </select>
             </div>
         </form>
     </div>

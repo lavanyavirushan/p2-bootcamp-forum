@@ -4,8 +4,8 @@ const session = require('express-session');
 const withAuth = require('../../utils/auth');
 
 router.post('/login', async (req, res) => {
-    // #swagger.tags = ['User']
-    // #swagger.description = 'Endpoint para obter um usuário.'
+  // #swagger.tags = ['User']
+  // #swagger.description = 'Sign in user'
   try {
     // Find the user who matches the posted e-mail address
     const userData = await User.findOne({
@@ -44,6 +44,8 @@ router.post('/login', async (req, res) => {
 });
 
 router.get('/logout', (req, res) => {
+  // #swagger.tags = ['User']
+  // #swagger.description = 'logout'
   if(req.session.loggedIn){
     req.session.destroy(() => {
       res.status(204).redirect('/login');
@@ -63,6 +65,7 @@ router.post('/register', async (req, res) => {
                 username: req.body.name,
                 email: req.body.email,
                 password: req.body.password,
+                avatar: req.body.avatar
             });
             delete user.dataValues.password
             res.status(200).json(user);
