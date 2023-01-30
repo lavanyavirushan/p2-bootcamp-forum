@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the homepage
-      document.location.replace('/');
+      window.location = "/";
     } else {
       console.warning(response.statusText);
     }
@@ -27,32 +27,3 @@ document.querySelector('#signupBtn').addEventListener('click', signup);
 function signup(){
   window.location = "/signup";
 }
-
-  // const signupFormHandler = async (event) => {
-  //   event.preventDefault();
-
-  //   const name = document.querySelector('#name-signup').value.trim();
-  //   const email = document.querySelector('#email-signup').value.trim();
-  //   const password = document.querySelector('#password-signup').value.trim();
-
-  //   if (name && email && password) {
-  //     const response = await fetch('/api/user', {
-  //       method: 'POST',
-  //       body: JSON.stringify({ name, email, password }),
-  //       headers: { 'Content-Type': 'application/json' },
-  //     });
-
-  //     if (response.ok) {
-  //       document.location.replace('/profile');
-  //     } else {
-  //       alert(response.statusText);
-  //     }
-  //   }
-  // };
-
-
-
-
-// document
-//   .querySelector('.signup-form')
-//   .addEventListener('#submit', signupFormHandler);
