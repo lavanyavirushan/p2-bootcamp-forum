@@ -50,7 +50,6 @@
         </div>
     </nav>
 
-
     <main class="container p-3">
         <div>
             <div class="row">
@@ -83,7 +82,7 @@
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header" style="background-color:rgb(212, 190, 226)">
-                                        <h5 class="modal-title" id="exampleModalLabel">Update my: </h5>
+                                        <h5 class="modal-title">Update my: </h5>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                             aria-label="Close"></button>
                                     </div>
@@ -105,7 +104,6 @@
                                             </div>
                                             <div class="col-sm-9">
                                                 <input type="text" id="fname" class="form-control">
-
                                             </div>
                                         </div>
                                         <!-- UPDATE LAST NAME -->
@@ -147,15 +145,31 @@
                                         <!-- UPDATE STATUS -->
                                         <div class="row g-3 align-items-center my-1">
                                             <div class="col-sm-3">
-                                                <label for="password" class="col-form-label">Status</label>
+                                                <label for="status" class="col-form-label">Status</label>
                                             </div>
                                             <div class="col-sm-9">
-                                                <select style="border:none">
+                                                <select id="status" style="border:none">
                                                     <option class="dropdown-item" value="student">current student
                                                     </option>
                                                     <option class="dropdown-item" value="grad">graduated student
                                                     </option>
                                                     <option class="dropdown-item" value="employer">employer</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!-- UPDATE FEATURED POST -->
+                                        <div class="row g-3 align-items-center my-1">
+                                            <div class="col-sm-3">
+                                                <label for="featuredPost" class="col-form-label">Featured Post</label>
+                                            </div>
+                                            <div class="col-sm-9">
+                                                <select id="featuredPost" style="border:none">
+                                                    <option class="dropdown-item" value="">{{userPost[0].title}}
+                                                    </option>
+                                                    <option class="dropdown-item" value="">{{userPost[1].title}}
+                                                    </option>
+                                                    <option class="dropdown-item" value="">{{userPost[2].title}}
+                                                    </option>
                                                 </select>
                                             </div>
                                         </div>
@@ -175,7 +189,7 @@
                 <!-- FEATURED POST CARD -->
                 <div class="card col-sm-6 m-3 text-center">
                     <div class="card-header" style="background-color:rgb(212, 190, 226)">
-                        Featured
+                        Featured Post
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">{{userPost.title}}</h5>
@@ -183,27 +197,28 @@
                         <!-- FEATURED POST BUTTON TRIGGER MODAL -->
                         <button type="button" class="btn"
                             style="background-color:powderblue; border:none; color:black; font-weight:bold;"
-                            data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            data-bs-toggle="modal" data-bs-target="#featuredPostModal">
                             Click to see full post
                         </button>
                     </div>
 
                     <!-- FEATURED POST MODAL -->
-                    <div class="modal fade modal-dialog modal-dialog-scrollable" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    <div class="modal fade modal-dialog modal-dialog-scrollable" id="featuredPostModal" tabindex="-1"
                         aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">{{userPost.title}}</h5>
+                                    <h5 class="modal-title" id="featured-post-title">{{userPost.title}}</h5>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                                 </div>
-                                <div class="modal-body">
-                                    {{userPost.text}}}}
-                                </div>
-                                <div class="modal-body">
-                                    {{userPost.comment}} {{userPost.comment.username}}
-                                    hi - maddie
+                                <div class="modal-body" id="featured-post-text">
+                                    {{userPost.text}} <br><br>
+                                    <ul class="list-group list-group-flush" id="featured-post-comments">
+                                        <li class="list-group-item">{{userPost.comment}} {{userPost.comment.username}}
+                                        </li>
+                                        <li class="list-group-item">hi - maddie</li>
+                                    </ul>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary"
@@ -214,10 +229,8 @@
                     </div>
                     <div class="card-footer text-muted">
                         {{userPost.timestamp}}
-
                     </div>
                 </div>
-
             </div>
             <!-- BOTTOM CARDS -->
             <div class="col-sm-12">
@@ -266,6 +279,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </main>
 
     <footer class="mt-3" style="background-color:rgb(212, 190, 226);">
