@@ -13,10 +13,9 @@
 </head>
 
 <body>
-    <header style="background-color:rgb(212, 190, 226);">
+    <header class="m-0" style="background-color:rgb(212, 190, 226);">
         <h1 class="text-center p-3">Bootcamp Forum</h1>
     </header>
-
     <!-- NAVBAR SECTION -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -51,40 +50,176 @@
     </nav>
 
     <!-- CAROUSEL SECTION -->
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div id="myCarousel" class="carousel slide p-3" style="background-color:powderblue" data-bs-ride="carousel">
+        <h2 class="text-center">Recommended Categories</h2>
         <div class="carousel-inner">
+            <!-- CSS -->
             <div class="carousel-item active">
-              <img src="./assets/image/flowers1.jpg" class="d-block w-100" alt="First slide">
+                <div class="card mx-auto text-center" style="max-width:540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="./assets/image/css.png" class="img-fluid rounded-start mt-3" style="height:150px"
+                                alt="CSS category link">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">CSS</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- NODEJS -->
             <div class="carousel-item">
-              <img src="./assets/image/flowers2.jpg" class="d-block w-100" alt="Second slide">
+                <div class="card mx-auto text-center" style="max-width:540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="./assets/image/nodejs.png" class="img-fluid rounded-start mt-5 ms-2 "
+                                style="height:110px" alt="Node category link">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body ">
+                                <h5 class="card-title">NODE JS</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- HEROKU -->
             <div class="carousel-item">
-              <img src="./assets/image/flowers3.jpg" class="d-block w-100" alt="Third slide">
+                <div class="card mx-auto text-center" style="max-width:540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="./assets/image/heroku.png" class="img-fluid rounded-start mt-3"
+                                style="height:150px" alt="Heroku category link">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">HEROKU</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- JAVASCRIPT -->
             <div class="carousel-item">
-                <img src="./assets/image/flowers4.jpg" class="d-block w-100" alt="Forth slide">
+                <div class="card mx-auto text-center" style="max-width:540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="./assets/image/javascript.png" class="img-fluid rounded-start mt-3"
+                                style="height:150px" alt="Javascript category link">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">JAVASCRIPT</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!-- HTML -->
             <div class="carousel-item">
-                <card class="d-block w-100" alt="Forth slide">
-
-                </card>
+                <div class="card mx-auto text-center" style="max-width:540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="./assets/image/html.png" class="img-fluid rounded-start mt-3" style="height:150px"
+                                alt="Html category link">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">HTML</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural
+                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-
-          <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
 
-    <card>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
 
-    </card>
+    <!-- BOTTOM CARDS -->
+    <div class="col-sm-12">
+        <h2 class="text-center mt-3">Highlighted Posts</h2>
+        <div class="card-group">
+        <div class="card col-sm-4 m-3 text-center">
+            <div class="card-header" style="background-color:rgb(212, 190, 226)">
+                Featured Post 1
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{userPost.title}}</h5>
+                <p class="card-text">{{userPost.text}}</p>
+                <button type="button" class="btn"
+                    style="background-color:powderblue; border:none; color:black; font-weight:bold;"
+                    data-bs-toggle="modal" data-bs-target="#featuredPostModal">
+                    Click to see full post
+                </button>
+            </div>
+            <div class="card-footer text-muted">
+                {{userPost.timestamp}}
+            </div>
+        </div>
+
+        <div class="card col-sm-4 m-3 text-center">
+            <div class="card-header" style="background-color:rgb(212, 190, 226)">
+                Featured Post 2
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{userPost.title}}</h5>
+                <p class="card-text">{{userPost.text}}</p>
+                <button type="button" class="btn"
+                    style="background-color:powderblue; border:none; color:black; font-weight:bold;"
+                    data-bs-toggle="modal" data-bs-target="#featuredPostModal">
+                    Click to see full post
+                </button>
+            </div>
+            <div class="card-footer text-muted">
+                {{userPost.timestamp}}
+            </div>
+        </div>
+
+        <div class="card col-sm-4 m-3 text-center">
+            <div class="card-header" style="background-color:rgb(212, 190, 226)">
+                Featured Post 3
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{userPost.title}}</h5>
+                <p class="card-text">{{userPost.text}}</p>
+                <button type="button" class="btn"
+                    style="background-color:powderblue; border:none; color:black; font-weight:bold;"
+                    data-bs-toggle="modal" data-bs-target="#featuredPostModal">
+                    Click to see full post
+                </button>
+            </div>
+            <div class="card-footer text-muted">
+                {{userPost.timestamp}}
+            </div>
+        </div>
+    </div>
+    </div>
+
 
     <footer class="mt-3" style="background-color:rgb(212, 190, 226);">
         <h3 class="text-center p-3">Copyright Info</h3>
