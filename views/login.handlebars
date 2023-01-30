@@ -1,17 +1,18 @@
-<card class="card p-3" style="background-color:rgb(212, 190, 226);">
+<card class="card p-3 space-from-top">
   <form class="mb-2 login-form">
       <div class="d-flex">
-          <h2 class="mx-auto">Login to Your Account</h2>
+          <h2 class="mx-auto fancy-font">Login to Your Account</h2>
       </div>
       <div class="px-3 mx-5">
           <input class="rounded m-1" type="text" id="username" name="username" placeholder=" Username" required><br>
           <input class="rounded m-1" type="password" id="password" name="password" placeholder="password" required><br>
           <div class="d-flex">
-              <button class="rounded mx-auto mt-2" id="submit" type="submit" value="Login">Login</button>
+              <button class="btn btn-danger btn-login btn-text"id="submit" type="submit" value="Login">Login</button>
+              <button class="btn-success rounded mx-auto" id="signupBtn" >Create Account</button>
           </div>
       </div>
   </form>
-  <button class="rounded mx-auto" id="signupBtn" style="background-color: powderblue;">Create Account</button>
+  
 </card>
 <script
   src="https://code.jquery.com/jquery-3.6.3.min.js"
