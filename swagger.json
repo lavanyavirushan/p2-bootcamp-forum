@@ -16,7 +16,7 @@
         "tags": [
           "User"
         ],
-        "description": "Endpoint para obter um usuário.",
+        "description": "Sign in user",
         "parameters": [
           {
             "name": "body",
@@ -82,6 +82,9 @@
                 },
                 "password": {
                   "example": "any"
+                },
+                "avatar": {
+                  "example": "any"
                 }
               }
             }
@@ -103,7 +106,7 @@
     "/posts/": {
       "get": {
         "tags": [
-          "UserPost"
+          "User Post"
         ],
         "description": "",
         "parameters": [],
@@ -118,7 +121,7 @@
       },
       "post": {
         "tags": [
-          "UserPost"
+          "User Post"
         ],
         "description": "",
         "parameters": [
@@ -154,10 +157,54 @@
         }
       }
     },
+    "/posts/by-current-user": {
+      "get": {
+        "tags": [
+          "User Post"
+        ],
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
+    },
+    "/posts/by-category/{category_id}": {
+      "get": {
+        "tags": [
+          "User Post"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "category_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
     "/posts/{id}": {
       "get": {
         "tags": [
-          "UserPost"
+          "User Post"
         ],
         "description": "",
         "parameters": [
@@ -174,6 +221,58 @@
           },
           "400": {
             "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/posts/{post_id}/like": {
+      "post": {
+        "tags": [
+          "User Post Likes"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "post_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "User Post Likes"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "name": "post_id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
           }
         }
       }
