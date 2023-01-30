@@ -20,6 +20,10 @@ User.init(
         type: DataTypes.STRING,
         allowNull: false,
       },
+      avatar: {
+        type: DataTypes.TEXT,
+        allowNull: true,
+      },
       email: {
         type: DataTypes.STRING,
         allowNull: false,
