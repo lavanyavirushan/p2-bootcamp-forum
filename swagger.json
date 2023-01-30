@@ -5,7 +5,7 @@
     "description": "Bootcamp blog post for students for students to learn/share knowledge",
     "version": "1.0.0"
   },
-  "host": "localhost:80",
+  "host": "p2-bootcamp-forum.herokuapp.com:80",
   "basePath": "/api",
   "schemes": [
     "http"
