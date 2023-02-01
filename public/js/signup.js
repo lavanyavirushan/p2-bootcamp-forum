@@ -16,6 +16,7 @@ const signupFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/login');
       } else {
+        //put modal here
         alert(response.statusText);
       }
     }

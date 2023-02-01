@@ -43,9 +43,46 @@ router.post('/login', async (req, res) => {
   }
 });
 
+router.post('/edit-name', withAuth, async (req, res) => {
+  try {
+    const user = await User.update(
+      {username: req.body.username },
+      {where: {id : req.body.id}}
+    )
+    res.status(200).json(user);    
+  } catch (error) {
+    res.status(400).json(error);  
+  }
+});
+
+router.post('/edit-message', withAuth, async (req, res) => {
+  try {
+    const user = await User.update(
+      {message: req.body.message},
+      {where: {id : req.body.id}}
+    )
+    res.status(200).json(user);      
+  } catch (error) {
+    res.status(400).json(error);  
+  }
+});
+
+router.post('/edit-avatar', async (req, res) => {
+  try {
+    console.log(req.body.image);
+    const user = await User.update(
+      {avatar: req.body.image},
+      {where: {id : req.body.id}}
+    )
+    res.status(200).json(user);      
+  } catch (error) {
+    res.status(400).json(error);  
+  }
+});
+
 router.get('/logout', (req, res) => {
   // #swagger.tags = ['User']
-  // #swagger.description = 'logout'
+  // #swagger.description = 'logout
   if(req.session.loggedIn){
     req.session.destroy(() => {
       res.status(204).redirect('/login');

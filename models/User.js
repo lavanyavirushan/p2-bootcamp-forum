@@ -24,6 +24,10 @@ User.init(
         type: DataTypes.TEXT,
         allowNull: true,
       },
+      message:{
+        type: DataTypes.TEXT,
+        allowNull: true,
+      },
       email: {
         type: DataTypes.STRING,
         allowNull: false,
