@@ -15,7 +15,7 @@ const loginFormHandler = async (event) => {
 
     if (response.ok) {
       // If successful, redirect the browser to the homepage
-      window.location = "/";
+      window.location = "/account";
     } else {
       console.warning(response.statusText);
     }
