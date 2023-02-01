@@ -82,7 +82,7 @@ router.post('/edit-avatar', async (req, res) => {
 
 router.get('/logout', (req, res) => {
   // #swagger.tags = ['User']
-  // #swagger.description = 'logout'
+  // #swagger.description = 'logout
   if(req.session.loggedIn){
     req.session.destroy(() => {
       res.status(204).redirect('/login');

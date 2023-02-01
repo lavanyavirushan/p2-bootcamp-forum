@@ -42,7 +42,7 @@ const edit = async() => {
         }
     }
     if (errors == 0){
-        window.location = "/account";
+        window.location = "/profile/account";
     }
 };
 
