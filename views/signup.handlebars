@@ -1,20 +1,21 @@
-<card class="card p-3">
-    <form class="mb-2 signup-form">
+<card class="card p-3" style="background-color: var(--l);">
+    <form class="mb-2">
         <div>
-            <h2 class="fancy-font">Sign Up for an Account</h2>
+            <h2 class="text-center fancy-font" style="color:var(--d);">Sign Up for an Account</h2>
         </div>
-        <div class="d-flex flex-column align-items-center mx-auto" style="width:fit-content">
-            <input class="rounded" type="text" id="fname" name="fname" placeholder=" First Name" required style="color:white"><br>
+        <div class="d-flex flex-column mx-auto" style="width:fit-content">
+            <input class="rounded mt-2" type="text" id="fname" name="fname" placeholder=" First Name" required
+                style="color:white"><br>
             <input class="rounded" type="text" id="lname" name="lname" placeholder=" Last Name" required><br>
             <input class="rounded" type="text" id="email" name="email" placeholder=" Email" required><br>
             <input class="rounded" type="text" id="username" name="username" placeholder=" Username" required><br>
             <input class="rounded" type="password" id="password" name="password" placeholder=" Password" required><br>
-            <div class="form-buttons">
-                <input class="btn btn-success" type="submit" value="Create My Account">
-                <button class="btn btn-secondary registered space-from-top btn-text">I already have an account</button>
-            </div>
+        </div>
+        <div class="d-flex">
+            <input class="btn rounded mx-auto mb-2" style="background-color:var(--d); color:white;" type="submit" value="Create My Account">
         </div>
     </form>
+    <button class="btn ounded mx-auto" style="background-color:var(--m); color:var(--g);" >I already have an account</button>
 
 </card>
 <script src="./js/signup.js"></script>

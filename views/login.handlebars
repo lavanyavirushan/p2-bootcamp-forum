@@ -1,21 +1,16 @@
-<card class="card p-3 space-from-top">
-  <form class="mb-2 login-form">
+<card class="card p-3" style="background-color: var(--l);">
+    <form class="mb-2">
       <div class="d-flex">
-          <h2 class="mx-auto fancy-font">Login to Your Account</h2>
+        <h2 class="mx-auto fancy-font" style="color:var(--d);">Login to Your Account</h2>
       </div>
+      {{!-- d-flex flex-column mx-auto --}}
       <div class="px-3 mx-5">
-          <input class="rounded m-1" type="text" id="username" name="username" placeholder=" Username" required><br>
-          <input class="rounded m-1" type="password" id="password" name="password" placeholder="password" required><br>
-          <div class="d-flex">
-              <button class="btn btn-danger btn-login btn-text"id="submit" type="submit" value="Login">Login</button>
-              <button class="btn-success rounded mx-auto" id="signupBtn" >Create Account</button>
-          </div>
+        <input class="rounded m-1" type="text" id="username" name="username" placeholder=" Username" required><br>
+        <input class="rounded m-1" type="password" id="password" name="password" placeholder=" Password" required><br>
+        <div class="d-flex">
+          <button class="btn mx-auto mt-2" style="background-color:var(--d); color:white;" id="submit" type="submit" value="Login">Login</button>
+        </div>
       </div>
-  </form>
-  
-</card>
-<script
-  src="https://code.jquery.com/jquery-3.6.3.min.js"
-  integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
-  crossorigin="anonymous"></script>
-<script src="./js/login.js"></script>
+    </form>
+    <button class="btn rounded mx-auto" style="background-color:var(--m); color:var(--g);" id="signupBtn">Create Account</button>
+  </card>
