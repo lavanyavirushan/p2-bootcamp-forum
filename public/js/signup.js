@@ -23,13 +23,8 @@ $( document ).ready( function() {
       }
   };
 
-  function login() {
-      window.location='/login';
-  }
 
   document
     .querySelector('.signup-form')
     .addEventListener('submit', signupFormHandler);
-
-  document.querySelector('.registered').addEventListener('click', login);
 });
