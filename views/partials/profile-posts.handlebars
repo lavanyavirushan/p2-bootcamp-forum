@@ -1,9 +1,7 @@
-<a href="/posts/{{id}}" style="text-decoration: none; color:black;">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title">{{title}}</h5>
-            <p class="card-text">{{description}}</p>    
-        </div>
+<a href="/post/{{id}}" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ title }}</h5>
+        <small class="text-muted">{{moment createdAt fromNow=null }}</small>
     </div>
-</a><br> 
-
+    <p class="mb-1">{{ description }}</p>
+</a>

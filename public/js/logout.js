@@ -4,9 +4,9 @@ const logout =async () =>  {
     credentials: 'include'
   });
   if (response.ok) {
+    window.localStorage.removeItem('user');
     document.location.replace('/login');
   } else {
     console.warning(response.statusText);
   }
 }
-document.querySelector('.btn-logout').addEventListener('click', logout);

@@ -14,16 +14,15 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
+      const userResponse = await response.json();
       // If successful, redirect the browser to the homepage
+      window.localStorage.setItem('user', JSON.stringify(userResponse.user));
       window.location = "/profile/account";
     } else {
       console.warning(response.statusText);
     }
   }
 }
-document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
-document.querySelector('#signupBtn').addEventListener('click', signup);
 
-function signup(){
-  window.location = "/signup";
-}
+document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
+

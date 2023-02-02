@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
 const { Category, Comment, User, UserPost, Likes } = require('../models');
 const withAuth = require('../utils/auth');
 const { Sequelize } = require('sequelize');
@@ -24,11 +23,32 @@ router.get('/', async (req, res) => {
     })
 
     const featured = likes.map((like) => like.get({ plain: true }));
-    res.render('home', { title: 'my other page', likes: featured, layout: 'newmain' });
+    let user = "";
+    if(req.session.loggedIn){
+        user = req.session.user_id
+    }
+    res.render('home', { title: 'my other page', likes: featured, userId: user, loggedIn: req.session.loggedIn });
 
   }catch(err){
     res.status(500).json(err);
   }
+});
+
+router.get('/signup', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/profile/account');
+        next();
+    }  
+    res.render('signup');
+});
+
+router.get('/login', (req, res) => {
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        next();
+    }  
+    res.render('login');
 });
 
 module.exports = router;
