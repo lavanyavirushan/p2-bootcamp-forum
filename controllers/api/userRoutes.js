@@ -43,7 +43,7 @@ router.post('/login', async (req, res) => {
   }
 });
 
-router.post('/edit-name', withAuth, async (req, res) => {
+router.put('/edit-name', withAuth, async (req, res) => {
   try {
     const user = await User.update(
       {username: req.body.username },
@@ -55,7 +55,7 @@ router.post('/edit-name', withAuth, async (req, res) => {
   }
 });
 
-router.post('/edit-message', withAuth, async (req, res) => {
+router.put('/edit-message', withAuth, async (req, res) => {
   try {
     const user = await User.update(
       {message: req.body.message},
@@ -67,7 +67,7 @@ router.post('/edit-message', withAuth, async (req, res) => {
   }
 });
 
-router.post('/edit-avatar', async (req, res) => {
+router.put('/edit-avatar', async (req, res) => {
   try {
     console.log(req.body.image);
     const user = await User.update(

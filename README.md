@@ -1,5 +1,10 @@
 # Bootcamp Forum
-(https://img.shields.io/badge/License-MIT-yellow.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/114792819/216424896-e9d9ed50-955e-4149-a952-ccc6aa4ca8cf.png" />
+</p>
+
   
 ## Description
 This application is a platform for past and present bootcamp students to connect, ask questions, mentor, and network with others going through the same experience. Unlike some other forums, even ones specifically for software development, this application is exclusively* for students in coding bootcamp programs, allowing users to have a much more personalized experience.
@@ -19,9 +24,12 @@ This application uses Node.js and a MySQL database, which is hosted & deployed o
 - [Questions](#questions)
     
 ## Installation 
-Click the url below to open the app:
+The following packages need to be installed:
 
-URL GOES HERE
+<p align="center">
+<img src="https://user-images.githubusercontent.com/114792819/216434063-389b1b3f-47bf-4d08-9377-bf4f25e00d5f.png" />
+</p>
+
 ## Usage 
 Users can get the most out of this app if they are registered with an account, however unregistered users are still able to browse the homepage, categories & posts. Once users have registered and/or logged into their account, they can interact with others by writing their own posts, as well as liking & commenting on other users' posts. Click the video link below to see the app's functionality:
 
