@@ -1,5 +1,10 @@
 # Bootcamp Forum
-(https://img.shields.io/badge/License-MIT-yellow.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/114792819/216424896-e9d9ed50-955e-4149-a952-ccc6aa4ca8cf.png" />
+</p>
+
   
 ## Description
 This application is a platform for past and present bootcamp students to connect, ask questions, mentor, and network with others going through the same experience. Unlike some other forums, even ones specifically for software development, this application is exclusively* for students in coding bootcamp programs, allowing users to have a much more personalized experience.
