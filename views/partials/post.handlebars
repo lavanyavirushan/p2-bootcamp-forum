@@ -1,0 +1,8 @@
+<a href="/posts/{{post.id}}" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">{{ post.title }}</h5>
+        <small class="text-muted">{{moment post.createdAt fromNow=null }}</small>
+    </div>
+    <p class="mb-1 text-truncate">{{ post.description }}</p>
+    <small class="text-muted">Createed by: {{ post.user.username }}</small>
+</a>

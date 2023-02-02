@@ -1,0 +1,9 @@
+<div id="posts" class="d-flex justify-content-center py-5">
+ 
+    <div class="list-group  col-9">
+    {{#each posts as | user_post|}}   
+        {{> post post=user_post }}
+    {{/each}}
+    </div>
+
+</div>
