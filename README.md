@@ -31,9 +31,8 @@ The following packages need to be installed:
 </p>
 
 ## Usage 
-Users can get the most out of this app if they are registered with an account, however unregistered users are still able to browse the homepage, categories & posts. Once users have registered and/or logged into their account, they can interact with others by writing their own posts, as well as liking & commenting on other users' posts. Click the video link below to see the app's functionality:
+Users can get the most out of this app if they are registered with an account, however unregistered users are still able to browse the homepage, categories & posts. Once users have registered and/or logged into their account, they can interact with others by writing their own posts, as well as liking & commenting on other users' posts. 
 
-SCREEN RECORDING LINK GOES HERE
 
 ## Credits 
 - https://getbootstrap.com/docs/5.0/
