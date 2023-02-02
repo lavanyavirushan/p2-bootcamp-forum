@@ -1,0 +1,9 @@
+api/node_modules/*
+.DS_Store
+.DS_Store
+ui/.DS_Store
+api/package-lock.json
+node_modules
+package-lock.json
+.env
+.DS_Store

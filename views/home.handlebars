@@ -1,0 +1,130 @@
+    <!-- CAROUSEL SECTION -->
+    <div id="myCarousel" class="carousel slide p-3 rounded m-4" style="background-color:var(--m);" data-bs-ride="carousel">
+        <h2 class="text-center" style="color:var(--g);">Recommended Categories</h2>
+        <div class="carousel-inner my-4">
+            <!-- CSS -->
+            <div class="carousel-item active">
+                <div class="card mx-auto text-center" style="max-width:540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="./image/css.png" class="img-fluid rounded-start mt-3" style="height:150px"
+                                alt="CSS category link">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body ">
+                                <h5 class="card-title">CSS</h5>
+                                <p class="card-text">"CSS is the language we use to style an HTML document. CSS describes how HTML elements should be displayed." - W3Schools</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- NODEJS -->
+            <div class="carousel-item">
+                <div class="card mx-auto text-center" style="max-width:540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="./image/nodejs.png" class="img-fluid rounded-start mt-5 ms-2 "
+                                style="height:110px" alt="Node category link">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body ">
+                                <h5 class="card-title">NODE JS</h5>
+                                <p class="card-text">"As an asynchronous event-driven JavaScript runtime, Node.js is designed to build scalable network applications." - Nodejs</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HEROKU -->
+            <div class="carousel-item">
+                <div class="card mx-auto text-center" style="max-width:540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="./image/heroku.png" class="img-fluid rounded-start mt-3"
+                                style="height:150px" alt="Heroku category link">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">HEROKU</h5>
+                                <p class="card-text">"Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud." - Heroku</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- JAVASCRIPT -->
+            <div class="carousel-item">
+                <div class="card mx-auto text-center" style="max-width:540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="./image/javascript.png" class="img-fluid rounded-start mt-3"
+                                style="height:150px" alt="Javascript category link">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">JAVASCRIPT</h5>
+                                <p class="card-text">"JavaScript is the world's most popular programming language...the programming language of the Web." - W3Schools"
+                                </p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- HTML -->
+            <div class="carousel-item">
+                <div class="card mx-auto text-center" style="max-width:540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="./image/html.png" class="img-fluid rounded-start mt-3" style="height:150px"
+                                alt="Html category link">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">HTML</h5>
+                                <p class="card-text">"HTML is the standard markup language for Web pages. With HTML you can create your own Website." - W3Schools</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- BOTTOM CARDS -->
+    <div class="col-sm-12">
+        <h2 class="text-center mt-3" style="color:var(--d);">Highlighted Posts</h2>
+        <div class="card-group">
+            {{#each likes as |like|}}
+            <div class="card rounded col-sm-4 m-3 text-center">
+                <div class="card-header" style="background-color:var(--d)">
+                    <h5 class="card-title" style="color:white;">{{like.title}}</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text text-truncate">{{like.description}}</p>
+                    <a type="button" class="btn" href="/post/{{like.id}}"
+                        style="background-color:var(--m); border:none; color:white;">
+                        Click to see full post
+                    </a>
+                </div>
+                <div class="card-footer text-muted">
+                    {{moment like.createdAt fromNow=null }}
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>

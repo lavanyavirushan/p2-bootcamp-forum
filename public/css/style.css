@@ -1,0 +1,100 @@
+html{
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: #778DA9;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.fancy-font{
+    font-family: 'Unbounded', serif;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: white;
+    opacity: 1; /* Firefox */
+}
+
+.profile-section-flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.profile-section{
+    max-width: fit-content;
+}
+
+.btn-text{
+    color: white;
+}
+.btn-login{
+    background-color: orange;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+header{
+    background-color: #333739;
+    color: white;
+    font-family: 'Unbounded', serif;
+}
+
+.bg-light{
+    background-color: grey;    
+}
+.container-fluid{
+    background-color: grey;
+    padding: 4px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(232, 230, 227, 0.55);
+}
+/* edit profile section */
+.profile-button {
+    background: rgb(99, 39, 120);
+    box-shadow: none;
+    border: none
+}
+
+.profile-button:hover {
+    background: #682773
+}
+
+.profile-button:focus {
+    background: #682773;
+    box-shadow: none
+}
+
+.profile-button:active {
+    background: #682773;
+    box-shadow: none
+}
+
+.back:hover {
+    color: #682773;
+    cursor: pointer;
+}
+
+.labels {
+    font-size: 11px;
+}
+
+.add-experience:hover {
+    background: #BA68C8;
+    color: #fff;
+    cursor: pointer;
+    border: solid 1px #BA68C8
+}
+
+@media (min-width: 768px) {
+    .carousel .carousel-item img {
+        height: 350px;        
+    }
+}
