@@ -33,16 +33,25 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="./userpost.html">Create Post</a>
+                        <a class="nav-link" href="/create-post">Create Post</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="/posts">Posts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="./homepage.html">Home</a>
+                        <a class="nav-link active" href="/">Home</a>
                     </li>
+                    {{#if userId}}
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="./accountpage.html">My Account</a>
+                        <a class="nav-link" aria-current="page" href="/profile/account">My Account</a>
                     </li>
+                    {{/if}}
                     <li class="nav-item">
-                        <a class="nav-link" href="./login.html">Logout</a>
+                        {{#if userId}}
+                        <a class="nav-link" href="/login">Login</a>
+                        {{else}}
+                        <a class="nav-link" href="/logout">Logout</a>
+                        {{/if}}
                     </li>
                 </ul>
             </div>
