@@ -1,23 +1,24 @@
-<h2 class="fancy-font space-from-top">My Profile</h2>
-<div class="card">
-  <div class="card-body">
-    <div class="d-flex flex-column align-items-center text-center">
-      <img src={{avatar}} alt="Admin" class="rounded-circle" width="150">
-      <div class="mt-3">
-        <h4>{{username}}</h4>
-        <p class="text-secondary mb-1">Bootcamp Student</p>
-        <p class="text-muted font-size-sm">{{message}}</p>
-         <a href="/profile/edit"><button class="btn btn-primary">Edit Profile</button></a>
-        <a href="/create-post"><button class="btn btn-outline-primary">Create Post</button></a>
+<container>
+  <div class="card rounded" style="margin-right:auto; margin-left:auto; margin-top: 20px; width : 600px; border: none;border-radius: 14px !important">
+      <div class="d-block justify-content-center">
+          <div class="area1 p-3 py-5" style="background-color: #1b263b;border-top-left-radius: 14px !important;border-top-right-radius: 14px !important;padding-top: 83px !important"> </div>
+          <div class="area2 p- text-center px-3" style="background-color:#fff;border-bottom-left-radius: 14px !important;border-bottom-right-radius: 14px !important">
+              <div class="image mr-3" style="top: -62px;position: relative"> <img src={{avatar}} class="rounded-circle" width="200" style="box-shadow: 5px 6px 6px 2px #e9ecef"/>
+                  <h4 class="name mt-3" style="font-size:25px;font-weight:650">{{username}}</h4>
+                  <p class="information mt-3 text-justify" style="font-weight:500;font-size:16px">{{message}}</p>
+              </div>
+              <div style="margin-bottom: 5px;"> 
+                <a href="/profile/edit"><button class="btn btn-primary">Edit Profile</button></a>
+                <a href="/create-post"><button class="btn btn-outline-primary">Create Post</button></a>
+              </div>
+          </div>
       </div>
-    </div>
   </div>
-</div>
 
-  <aside class="users-posts space-from-top space-from-left">
-    <h2 class="fancy-font">My posts</h2>
-    {{#each user_posts as |post|}}
-      {{>profile-posts}}
-    {{/each}}
-  </aside>
-</div> 
+    <aside style="margin-top: 15px;">
+      {{#each user_posts as |post|}}
+        {{>profile-posts}}
+      {{/each}}
+    </aside>
+  </div> 
+</container>
