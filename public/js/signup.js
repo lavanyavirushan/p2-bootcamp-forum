@@ -1,33 +1,35 @@
-const signupFormHandler = async (event) => {
-    event.preventDefault();
+$( document ).ready( function() {
+  const signupModal = new bootstrap.Modal(document.getElementById('modalCookie1'));
 
-    const name = document.querySelector('#username').value.trim();
-    const email = document.querySelector('#email').value.trim();
-    const password = document.querySelector('#password').value.trim();
-    alert(name + ' ' + email  + ' ' + password);
+  const signupFormHandler = async (event) => {
+      event.preventDefault();
 
-    if (name && email && password) {
-      const response = await fetch('/api/user/register', {
-        method: 'POST',
-        body: JSON.stringify({ name, email, password }),
-        headers: { 'Content-Type': 'application/json' },
-      });
+      const name = document.querySelector('#username').value.trim();
+      const email = document.querySelector('#email').value.trim();
+      const password = document.querySelector('#password').value.trim();
 
-      if (response.ok) {
-        document.location.replace('/login');
-      } else {
-        //put modal here
-        alert(response.statusText);
+      if (name && email && password) {
+        const response = await fetch('/api/user/register', {
+          method: 'POST',
+          body: JSON.stringify({ name, email, password }),
+          headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (response.ok) {
+          document.location.replace('/login');
+        } else {
+          signupModal.show();
+        }
       }
-    }
-};
+  };
 
-function login() {
-    window.location='/login';
-}
+  function login() {
+      window.location='/login';
+  }
 
-document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
+  document
+    .querySelector('.signup-form')
+    .addEventListener('submit', signupFormHandler);
 
-document.querySelector('.registered').addEventListener('click', login);
+  document.querySelector('.registered').addEventListener('click', login);
+});
