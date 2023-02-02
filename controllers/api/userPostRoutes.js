@@ -225,7 +225,6 @@ router.get('/:id', async (req, res) => {
 router.post('/', withAuth, async (req, res) => {
     // #swagger.tags = ['User Post'] 
     try {
-
       const newPost = await UserPost.create({
         title: req.body.title,
         description: req.body.description,

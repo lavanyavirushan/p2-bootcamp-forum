@@ -156,26 +156,27 @@ router.get('/logout', (req, res) => {
 });
 
 router.post('/register', async (req, res) => {
-  // #swagger.tags = ['User']
-  // #swagger.description = 'Register new user'
-  if (!req.session.logged_in) {
-    // Creat new user
-    try {
-      const user = await User.create({
-        username: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-        avatar: req.body.avatar
-      });
-      delete user.dataValues.password
-      res.status(200).json(user);
-    } catch (err) {
-      res.status(400).json({ error: "Unable to create an account" });
+    // #swagger.tags = ['User']
+    // #swagger.description = 'Register new user'
+    if (!req.session.logged_in) {
+      // Creat new user
+        try {
+            const user = await User.create({
+                username: req.body.name,
+                email: req.body.email,
+                password: req.body.password,
+                avatar: req.body.avatar,
+                message: req.body.message
+            });
+            delete user.dataValues.password
+            res.status(200).json(user);
+        } catch (err) {
+            res.status(400).json({error: "Unable to create an account"});
+        }
+  
+    } else {
+      res.status(404).end();
     }
-
-  } else {
-    res.status(404).end();
-  }
-});
+  });
 
 module.exports = router;

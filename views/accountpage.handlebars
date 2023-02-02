@@ -1,17 +1,25 @@
-<h2 class="fancy-font ">My Profile</h2>
-<div class="row">
+<container>
+  <h2 class="fancy-font ">My Profile</h2>
   {{!-- USER INFO CARD --}}
-  <card class="card">
-    <div class="card-body">
-      <div class="d-flex flex-column align-items-center text-center">
-        <img src={{avatar}} alt="Admin" class="card-img-top mb-2 rounded-circle" width="150">
+  <card class="card rounded"
+    style="margin-right:auto; margin-left:auto; margin-top: 20px; width : 600px; border: none; border-radius: 14px !important">
+  </card>>
+  <div class="card-body d-block justify-content-center">
+    <div class="d-flex flex-column align-items-center text-center">
+      <div class="image mr-3" style="top: -62px;position: relative">
+        <img src={{avatar}} class="rounded-circle" width="200" style="box-shadow: 5px 6px 6px 2px #e9ecef" />
+      </div>
+
+      <div class="area1 p-3 py-5"
+        style="background-color: #1b263b;border-top-left-radius: 14px !important;border-top-right-radius: 14px !important;padding-top: 83px !important">
+      </div>
+      <div class="area2 p- text-center px-3"
+        style="background-color:#fff;border-bottom-left-radius: 14px !important;border-bottom-right-radius: 14px !important">
         <ul class="text-center p-0" style="list-style:none;">
           <li class="card-text p-1">{{fname}} {{lname}}</li>
-          <li class="card-text p-1"></li>{{username}}</li>
-          <li class="card-text p-1">Bootcamp Student</li>
-          <li class="card-text p-1 text-muted">{{message}}</li>
+          <li class="card-text p-1 name">{{username}}</li>
+          <li class="card-text p-1 text-muted information">{{message}}</li>
           <li><a href="/profile/edit"><button class="btn btn-primary">Edit Profile</button></a></li>
-          {{!-- <a href="/create-post"><button class="btn btn-outline-primary">Create Post</button></a> --}}
           <li class="card-text pt-3">
             <!-- USER CARD BUTTON TRIGGER MODAL -->
             <button class="btn" style="background-color:powderblue; border:none; color:black; font-weight:bold;"
@@ -19,96 +27,99 @@
               Profile</button>
           </li>
         </ul>
-        <!-- USER CARD MODAL -->
-        <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel"
-          aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header" style="background-color:var(--m)">
-                <h5 class="modal-title">Update my: </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <!-- UPDATE PROFILE PHOTO -->
-                <div class="row g-3 align-items-center">
-                  <div class="col-sm-3">
-                    <label for="photo" class="col-form-label" style="color:var(--d);">Profile Photo</label>
-                  </div>
-                  <div class="col-sm-6 input-group">
-                    <input type="file" id="formFile" class="form-control">
-                    <label class="input-group-text" for="photo">Upload</label>
-                  </div>
-                </div>
-                <!-- UPDATE FIRST NAME -->
-                <div class="row g-3 align-items-center my-1">
-                  <div class="col-sm-3">
-                    <label for="fname" class="col-form-label" style="color:var(--d);">First Name</label>
-                  </div>
-                  <div class="col-sm-9">
-                    <input type="text" id="fname" class="form-control">
-                  </div>
-                </div>
-                <!-- UPDATE LAST NAME -->
-                <div class="row g-3 align-items-center my-1">
-                  <div class="col-sm-3">
-                    <label for="lname" class="col-form-label" style="color:var(--d);">Last Name</label>
-                  </div>
-                  <div class="col-sm-9">
-                    <input type="text" id="lname" class="form-control">
-                  </div>
-                </div>
-                <!-- UPDATE EMAIL -->
-                <div class="row g-3 align-items-center my-1">
-                  <div class="col-sm-3">
-                    <label for="email" class="col-form-label" style="color:var(--d);">Message</label>
-                  </div>
-                  <div class="col-sm-9">
-                    <input type="text" id="message" placeholder="tell the world what you think..." class="form-control">
-                  </div>
-                </div>
-                <!-- UPDATE USERNAME -->
-                <div class="row g-3 align-items-center my-1">
-                  <div class="col-sm-3">
-                    <label for="username" class="col-form-label" style="color:var(--d);">Username</label>
-                  </div>
-                  <div class="col-sm-9">
-                    <input type="text" id="username" class="form-control">
-                  </div>
-                </div>
-                <!-- UPDATE PASSWORD -->
-                <div class="row g-3 align-items-center my-1">
-                  <div class="col-sm-3">
-                    <label for="password" class="col-form-label" style="color:var(--d);">Password</label>
-                  </div>
-                  <div class="col-sm-9">
-                    <input type="password" id="password" class="form-control">
-                  </div>
-                </div>
-                <!-- CLOSE OR SAVE CHANGES -->
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn" style="background-color:powderblue; border:none;">Save
-                    changes</button>
-                </div>
-              </div>
+
+
+      </div>
+
+    </div>
+  </div>
+  <!-- USER CARD MODAL -->
+  <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color:var(--m)">
+          <h5 class="modal-title">Update my: </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- UPDATE PROFILE PHOTO -->
+          <div class="row g-3 align-items-center">
+            <div class="col-sm-3">
+              <label for="photo" class="col-form-label" style="color:var(--d);">Profile Photo</label>
             </div>
+            <div class="col-sm-6 input-group">
+              <input type="file" id="formFile" class="form-control">
+              <label class="input-group-text" for="photo">Upload</label>
+            </div>
+          </div>
+          <!-- UPDATE FIRST NAME -->
+          <div class="row g-3 align-items-center my-1">
+            <div class="col-sm-3">
+              <label for="fname" class="col-form-label" style="color:var(--d);">First Name</label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" id="fname" class="form-control">
+            </div>
+          </div>
+          <!-- UPDATE LAST NAME -->
+          <div class="row g-3 align-items-center my-1">
+            <div class="col-sm-3">
+              <label for="lname" class="col-form-label" style="color:var(--d);">Last Name</label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" id="lname" class="form-control">
+            </div>
+          </div>
+          <!-- UPDATE EMAIL -->
+          <div class="row g-3 align-items-center my-1">
+            <div class="col-sm-3">
+              <label for="email" class="col-form-label" style="color:var(--d);">Message</label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" id="message" placeholder="tell the world what you think..." class="form-control">
+            </div>
+          </div>
+          <!-- UPDATE USERNAME -->
+          <div class="row g-3 align-items-center my-1">
+            <div class="col-sm-3">
+              <label for="username" class="col-form-label" style="color:var(--d);">Username</label>
+            </div>
+            <div class="col-sm-9">
+              <input type="text" id="username" class="form-control">
+            </div>
+          </div>
+          <!-- UPDATE PASSWORD -->
+          <div class="row g-3 align-items-center my-1">
+            <div class="col-sm-3">
+              <label for="password" class="col-form-label" style="color:var(--d);">Password</label>
+            </div>
+            <div class="col-sm-9">
+              <input type="password" id="password" class="form-control">
+            </div>
+          </div>
+          <!-- CLOSE OR SAVE CHANGES -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn" style="background-color:powderblue; border:none;">Save
+              changes</button>
           </div>
         </div>
       </div>
     </div>
+  </div>
+  </div>
+  </div>
   </card>
-</div>
-
-{{!-- USER'S POSTS --}}
-<aside class="users-posts">
-  <h2 class="fancy-font">My posts</h2>
-  {{#each user_posts as |post|}}
-  {{>profile-posts}}
-  {{/each}}
-</aside>
-
-</div>
+  </div>
+  </div>
 
 
 
-</div>
+  <aside class="users-posts space-from-top space-from-left">
+    <h2 class="fancy-font">My posts</h2>
+    {{#each user_posts as |post|}}
+    {{>profile-posts}}
+    {{/each}}
+  </aside>
+  </div>
