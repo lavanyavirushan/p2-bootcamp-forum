@@ -65,7 +65,7 @@
                 <p>
                   {{ comment.comment }}
                 </p> 
-                {{#eq comment.user_id compare=../userId }}
+                {{#eq comment.user_id compare=../user.id }}
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="d-flex align-items-center">
                     <button class="link-muted btn btn-link text-decoration-none me-2 delete-comment" onclick="deleteComment(this, {{ comment.id }})"><i class="fa fa-trash me-1"></i></button>
@@ -74,7 +74,7 @@
                 </div>
                 {{/eq}}
             </div>
-            {{#eq comment.user_id compare=../userId }}
+            {{#eq comment.user_id compare=../user.id }}
               <div class="card-footer border-0 d-none" style="background-color: #f8f9fa;">
                 <div class="d-flex flex-start w-100">
                   <img class="rounded-circle shadow-1-strong me-3"

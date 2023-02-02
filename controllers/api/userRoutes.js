@@ -46,8 +46,8 @@ router.post('/login', async (req, res) => {
 router.post('/edit-name', withAuth, async (req, res) => {
   try {
     const user = await User.update(
-      { username: req.body.username },
-      { where: { id: req.body.id } }
+      {username: req.body.username },
+      {where: {id : req.session.user_id}}
     )
     res.status(200).json(user);
   } catch (error) {
@@ -58,8 +58,8 @@ router.post('/edit-name', withAuth, async (req, res) => {
 router.post('/edit-message', withAuth, async (req, res) => {
   try {
     const user = await User.update(
-      { message: req.body.message },
-      { where: { id: req.body.id } }
+      {message: req.body.message},
+      {where: {id : req.session.user_id}}
     )
     res.status(200).json(user);
   } catch (error) {
@@ -71,8 +71,8 @@ router.post('/edit-avatar', async (req, res) => {
   try {
     console.log(req.body.image);
     const user = await User.update(
-      { avatar: req.body.image },
-      { where: { id: req.body.id } }
+      {avatar: req.body.image},
+      {where: {id : req.session.user_id}}
     )
     res.status(200).json(user);
   } catch (error) {
