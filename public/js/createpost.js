@@ -1,5 +1,8 @@
-$( document ).ready(async function() {
-    var myModal = new bootstrap.Modal(document.getElementById('modalCookie1'));
+$( document ).ready( function() {
+    
+    const categoryModal = new bootstrap.Modal(document.getElementById('modalCookie1'));
+    const titleModal = new bootstrap.Modal(document.getElementById('modalCookie2'));
+    const descriptionModal = new bootstrap.Modal(document.getElementById('modalCookie3'));
 
     createPost = (title, description, category_id) => {
         const response =  fetch('/api/posts/', {
@@ -16,10 +19,17 @@ $( document ).ready(async function() {
         const description = $('#post-content').val();
         const  category_id = $('.categoryId').val(); 
         if(category_id === "Category"){
-            myModal.show();
+            categoryModal.show();
             return;           
-        }else{
-            createPost(title, description, category_id);
         }
+        if(!title){
+            titleModal.show();
+            return;
+        }
+        if(!description){
+            descriptionModal.show();
+            return;
+        }        
+        createPost(title, description, category_id);        
     });
 });

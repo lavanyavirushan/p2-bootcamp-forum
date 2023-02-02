@@ -47,7 +47,7 @@ router.post('/edit-name', withAuth, async (req, res) => {
   try {
     const user = await User.update(
       {username: req.body.username },
-      {where: {id : req.body.id}}
+      {where: {id : req.session.user_id}}
     )
     res.status(200).json(user);    
   } catch (error) {
@@ -59,7 +59,7 @@ router.post('/edit-message', withAuth, async (req, res) => {
   try {
     const user = await User.update(
       {message: req.body.message},
-      {where: {id : req.body.id}}
+      {where: {id : req.session.user_id}}
     )
     res.status(200).json(user);      
   } catch (error) {
@@ -72,7 +72,7 @@ router.post('/edit-avatar', async (req, res) => {
     console.log(req.body.image);
     const user = await User.update(
       {avatar: req.body.image},
-      {where: {id : req.body.id}}
+      {where: {id : req.session.user_id}}
     )
     res.status(200).json(user);      
   } catch (error) {
@@ -102,7 +102,8 @@ router.post('/register', async (req, res) => {
                 username: req.body.name,
                 email: req.body.email,
                 password: req.body.password,
-                avatar: req.body.avatar
+                avatar: req.body.avatar,
+                message: req.body.message
             });
             delete user.dataValues.password
             res.status(200).json(user);
