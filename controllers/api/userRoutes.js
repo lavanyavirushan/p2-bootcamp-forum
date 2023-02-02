@@ -80,68 +80,6 @@ router.put('/edit-avatar', async (req, res) => {
   }
 });
 
-// MADDIE ADDED FROM HERE
-router.post('/edit-fname', withAuth, async (req, res) => {
-  // only update if the user has entered something into the input field
-  if (req.body.fname.not().isEmpty()) {
-    try {
-      const user = await User.update(
-        { fname: req.body.fname },
-        { where: { id: req.body.id } }
-      )
-      res.status(200).json(user);
-    } catch (error) {
-      res.status(400).json(error);
-    }
-  }
-});
-
-router.post('/edit-lname', withAuth, async (req, res) => {
-  // only update if the user has entered something into the input field
-  if (req.body.lname.not().isEmpty()) {
-    try {
-      const user = await User.update(
-        { lname: req.body.lname },
-        { where: { id: req.body.id } }
-      )
-      res.status(200).json(user);
-    } catch (error) {
-      res.status(400).json(error);
-    }
-  }
-});
-
-router.post('/edit-email', withAuth, async (req, res) => {
-  // only update if the user has entered something into the input field
-  if (req.body.email.not().isEmpty()) {
-    try {
-      const user = await User.update(
-        { password: req.body.password },
-        { where: { id: req.body.id } }
-      )
-      res.status(200).json(user);
-    } catch (error) {
-      res.status(400).json(error);
-    }
-  }
-});
-
-router.post('/edit-password', withAuth, async (req, res) => {
-  // only update if the user has entered something into the input field
-  if (req.body.password.not().isEmpty()) {
-    try {
-      const user = await User.update(
-        { password: req.body.password },
-        { where: { id: req.body.id } }
-      )
-      res.status(200).json(user);
-    } catch (error) {
-      res.status(400).json(error);
-    }
-  }
-});
-
-// TO HERE
 
 router.get('/logout', (req, res) => {
   // #swagger.tags = ['User']
