@@ -1,13 +1,13 @@
-<container>
-  <div class="card rounded" style="margin-right:auto; margin-left:auto; margin-top: 20px; width : 600px; border: none;border-radius: 14px !important">
+<div class="container my-5 py-5">
+  <div class="card rounded">
       <div class="d-block justify-content-center">
-          <div class="area1 p-3 py-5" style="background-color: #1b263b;border-top-left-radius: 14px !important;border-top-right-radius: 14px !important;padding-top: 83px !important"> </div>
-          <div class="area2 p- text-center px-3" style="background-color:#fff;border-bottom-left-radius: 14px !important;border-bottom-right-radius: 14px !important">
+          <div class="area1 p-3 py-5" style="background-color: #1b263b; border-top-right-radius: 14px !important;padding-top: 83px !important"> </div>
+          <div class="area2 text-center px-3">
               <div class="image mr-3" style="top: -62px;position: relative"> <img src={{avatar}} class="rounded-circle" width="200" style="box-shadow: 5px 6px 6px 2px #e9ecef"/>
                   <h4 class="name mt-3" style="font-size:25px;font-weight:650">{{username}}</h4>
-                  <p class="information mt-3 text-justify" style="font-weight:500;font-size:16px">{{message}}</p>
+                  <p class="information mt-3 text-justify" >{{message}}</p>
               </div>
-              <div style="margin-bottom: 5px;"> 
+              <div class="py-2"> 
                 <a href="/profile/edit"><button class="btn btn-primary">Edit Profile</button></a>
                 <a href="/create-post"><button class="btn btn-outline-primary">Create Post</button></a>
               </div>
@@ -21,4 +21,4 @@
       {{/each}}
     </aside>
   </div> 
-</container>
+</div>  

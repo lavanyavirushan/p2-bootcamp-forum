@@ -55,7 +55,6 @@ const cancelEditComment = el => {
  */
 const deleteCommentUIUpdate = el => {
     const comment = el.parentElement.parentElement.parentElement.parentElement.parentElement;
-    console.log(comment)
     comment.parentNode.removeChild(comment);
 }
 

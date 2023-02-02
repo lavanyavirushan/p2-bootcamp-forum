@@ -1,16 +1,12 @@
-$( document ).ready( function() {
-
-  const logout =async () =>  {
-    const response = await fetch('/api/user/logout', {
-      method: 'get',
-      credentials: 'include'
-    });
-    if (response.ok) {
-      document.location.replace('/login');
-    } else {
-      console.warning(response.statusText);
-    }
+const logout =async () =>  {
+  const response = await fetch('/api/user/logout', {
+    method: 'get',
+    credentials: 'include'
+  });
+  if (response.ok) {
+    window.localStorage.removeItem('user');
+    document.location.replace('/login');
+  } else {
+    console.warning(response.statusText);
   }
-  document.querySelector('.btn-logout').addEventListener('click', logout);
-  
-});
+}

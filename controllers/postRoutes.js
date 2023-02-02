@@ -3,6 +3,16 @@ const { Sequelize } = require('sequelize');
 const { Category, Comment, User, UserPost, Likes } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Use withAuth middleware to protect access to route
+router.get('/create', withAuth, async (req, res) => {
+    try{
+        res.render('create-post', {loggedIn: req.session.loggedIn});
+    }catch(err){
+        console.log(err)
+        res.status(500).json(err);
+    }
+});
+
 router.get('/', async (req, res) => {
   try{
     const posts = await UserPost.findAll(
@@ -25,8 +35,12 @@ router.get('/', async (req, res) => {
             group: ['user_post.id']
         }
     );
+    let user = "";
+    if(req.session.loggedIn){
+        user = req.session.user_id
+    }
     const post_list = posts.map((post) => post.get({ plain: true }));
-    res.render('posts', { posts: post_list, layout: 'newmain' });
+    res.render('posts', { posts: post_list, userId: user, loggedIn: req.session.loggedIn });
 
   }catch(err){
     res.status(500).json(err);
@@ -67,16 +81,24 @@ router.get('/:id', async (req, res) => {
             }
         );
         const postDetails = posts.get({plain: true})
-        let user = "";
+        let userDetail = "";
         if(req.session.loggedIn){
-            user = req.session.user_id
+            //let user = req.session.user_id
+            const user = await User.findOne({
+                where: {
+                    id: req.session.user_id
+                },
+                attributes: { exclude: ['password']},
+            })
+            userDetail = user.get({plain: true})
         }
-        console.log(user)
-        res.render('post-details', { postDetails: postDetails, userId: user, layout: 'newmain' });
+        
+        res.render('post-details', { postDetails: postDetails, user: userDetail, loggedIn: req.session.loggedIn });
   
     }catch(err){
       res.status(500).json(err);
     }
-  });
+});
+
 
 module.exports = router;
