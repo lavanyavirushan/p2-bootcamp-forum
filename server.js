@@ -9,6 +9,7 @@ const sequelize = require('./config/connection');
 const swaggerUi = require('swagger-ui-express');
 swaggerDocument = require('./swagger.json');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const helper = require('handlebars-helpers')();
 require('dotenv').config();
 //Initilaize objects
 const app = express();

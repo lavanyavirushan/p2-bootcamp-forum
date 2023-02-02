@@ -102,7 +102,8 @@ router.post('/register', async (req, res) => {
                 username: req.body.name,
                 email: req.body.email,
                 password: req.body.password,
-                avatar: req.body.avatar
+                avatar: req.body.avatar,
+                message: req.body.message
             });
             delete user.dataValues.password
             res.status(200).json(user);
