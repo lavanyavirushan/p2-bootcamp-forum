@@ -24,7 +24,6 @@ const loginFormHandler = async (event) => {
       window.location = "/profile/account";
     } else {
       loginModal.show();
-      console.warn(response.statusText);
     }
   }
 }
