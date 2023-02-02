@@ -69,7 +69,6 @@ router.put('/edit-message', withAuth, async (req, res) => {
 
 router.put('/edit-avatar', async (req, res) => {
   try {
-    console.log(req.body.image);
     const user = await User.update(
       {avatar: req.body.image},
       {where: {id : req.session.user_id}}

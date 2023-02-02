@@ -3,7 +3,6 @@ const userRoutes = require('./userRoutes');
 const userPostRoutes = require('./userPostRoutes');
 const categoryRoutes = require('./categoryRoutes');
 const commentRoutes = require('./commentRoutes');
-const { application } = require('express'); 
 
 router.use('/user', userRoutes);
 router.use('/posts', userPostRoutes);

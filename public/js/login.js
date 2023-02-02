@@ -1,6 +1,6 @@
 const loginFormHandler = async (event) => {
 
-  const loginModal = new bootstrap.Modal(document.getElementById('modalCookie1'));
+  // const loginModal = new bootstrap.Modal(document.getElementById('modalCookie1'));
 
 
   event.preventDefault();
