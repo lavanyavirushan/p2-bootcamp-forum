@@ -1,127 +1,36 @@
-<container class="container my-5 py-5">
-  <h2 class="fancy-font ">My Profile</h2>
-  {{!-- USER INFO CARD --}}
-  <card class="card rounded"
-    style="margin-right:auto; margin-left:auto; margin-top: 20px; width : 600px; border: none; border-radius: 14px !important; padding-top: 83px !important">
-  </card>>
-  <div class="card-body d-block justify-content-center">
-    <div class="d-flex flex-column align-items-center text-center">
-      <div class="image mr-3" style="top: -62px;position: relative">
-        <img src={{avatar}} class="rounded-circle" width="200" style="box-shadow: 5px 6px 6px 2px #e9ecef" />
-      </div>
-
-      <div class="area1 p-3 py-5"
-        style="background-color: #1b263b;border-top-left-radius: 14px !important;border-top-right-radius: 14px !important;padding-top: 83px !important">
-      </div>
-      <div class="area2 p- text-center px-3"
-        style="background-color:#fff;border-bottom-left-radius: 14px !important;border-bottom-right-radius: 14px !important">
-              <div class="image mr-3" style="top: -62px;position: relative"> 
-                {{!-- <img src={{avatar}} class="rounded-circle" width="200" style="box-shadow: 5px 6px 6px 2px #e9ecef"/> --}}
-
-        <ul class="text-center p-0" style="list-style:none;">
-          <li class="card-text p-1">{{fname}} {{lname}}</li>
-          <li class="card-text p-1 name">{{username}}</li>
-          <li class="card-text p-1 text-muted information">{{message}}</li>
-          <li><a href="/profile/edit"><button class="btn btn-primary">Edit Profile</button></a></li>
-          <li class="card-text pt-3">
-            <!-- USER CARD BUTTON TRIGGER MODAL -->
-            <button class="btn" style="background-color:powderblue; border:none; color:black; font-weight:bold;"
-              type="button" data-bs-toggle="modal" data-bs-target="#editProfileModal">Edit
-              Profile</button>
-          </li>
-        </ul>
-<a href="/profile/edit"><button class="btn btn-primary">Edit Profile</button></a>
-                <a href="/create-post"><button class="btn btn-outline-primary">Create Post</button></a>
-
-      </div>
-
-    </div>
-  </div>
-  <!-- USER CARD MODAL -->
-  <div class="modal fade" id="editProfileModal" tabindex="-1" aria-labelledby="editProfileModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header" style="background-color:var(--m)">
-          <h5 class="modal-title">Update my: </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <!-- UPDATE PROFILE PHOTO -->
-          <div class="row g-3 align-items-center">
-            <div class="col-sm-3">
-              <label for="photo" class="col-form-label" style="color:var(--d);">Profile Photo</label>
+<div class="container py-5 h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col col-md-9 col-lg-7 col-xl-5">
+      <div class="card" style="border-radius: 15px;">
+        <div class="card-body p-4">
+          <div class="d-flex" style="color:var(--d);">
+            <div class="flex-shrink-0">
+              <img src={{avatar}} alt="profile photo" class="img-fluid" style="width: 180px; border-radius: 10px;">
             </div>
-            <div class="col-sm-6 input-group">
-              <input type="file" id="formFile" class="form-control">
-              <label class="input-group-text" for="photo">Upload</label>
+            <div class="flex-grow-1 ms-3">
+              <h5 class="mb-1" style="color:var(--d);">{{username}}</h5>
+              <p class="mb-2 pb-1" style="color: #2b2a2a;">Bootcamp Student</p>
+              <div class="d-flex justify-content-start rounded-3 p-2 mb-2" style="background-color:var(--m);">
+                <p class="information mt-3 text-justify" style="color:white;">{{message}}</p>
+              </div>
+              <div class="d-flex pt-1">
+                <a href="/profile/edit"><button class="btn btn-lg btn-block"
+                    style="background-color:var(--d); color:white;">Edit Profile</button></a>
+                {{!-- for a future edition where users can view one another's profiles --}}
+                {{!-- <button type="button" class="btn me-1 flex-grow-1"
+                  style="border:2px solid var(--d); color:var(--d);">Chat</button> --}}
+                {{!-- <button type="button" class="btn flex-grow-1" style="color:var(--d);">Follow</button> --}}
+              </div>
             </div>
-          </div>
-          <!-- UPDATE FIRST NAME -->
-          <div class="row g-3 align-items-center my-1">
-            <div class="col-sm-3">
-              <label for="fname" class="col-form-label" style="color:var(--d);">First Name</label>
-            </div>
-            <div class="col-sm-9">
-              <input type="text" id="fname" class="form-control">
-            </div>
-          </div>
-          <!-- UPDATE LAST NAME -->
-          <div class="row g-3 align-items-center my-1">
-            <div class="col-sm-3">
-              <label for="lname" class="col-form-label" style="color:var(--d);">Last Name</label>
-            </div>
-            <div class="col-sm-9">
-              <input type="text" id="lname" class="form-control">
-            </div>
-          </div>
-          <!-- UPDATE EMAIL -->
-          <div class="row g-3 align-items-center my-1">
-            <div class="col-sm-3">
-              <label for="email" class="col-form-label" style="color:var(--d);">Message</label>
-            </div>
-            <div class="col-sm-9">
-              <input type="text" id="message" placeholder="tell the world what you think..." class="form-control">
-            </div>
-          </div>
-          <!-- UPDATE USERNAME -->
-          <div class="row g-3 align-items-center my-1">
-            <div class="col-sm-3">
-              <label for="username" class="col-form-label" style="color:var(--d);">Username</label>
-            </div>
-            <div class="col-sm-9">
-              <input type="text" id="username" class="form-control">
-            </div>
-          </div>
-          <!-- UPDATE PASSWORD -->
-          <div class="row g-3 align-items-center my-1">
-            <div class="col-sm-3">
-              <label for="password" class="col-form-label" style="color:var(--d);">Password</label>
-            </div>
-            <div class="col-sm-9">
-              <input type="password" id="password" class="form-control">
-            </div>
-          </div>
-          <!-- CLOSE OR SAVE CHANGES -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn" style="background-color:powderblue; border:none;">Save
-              changes</button>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
-  </div>
-  </card>
-  </div>
-  </div>
-    <aside  class="users-posts space-from-top space-from-left" style="margin-top: 15px;">
-          <h2 class="fancy-font">My posts</h2>
+    <aside class="users-posts space-from-top space-from-left" style="margin-top: 15px;">
+      <h2 class="fancy-font">My posts</h2>
       {{#each user_posts as |post|}}
-        {{>profile-posts}}
+      {{>profile-posts}}
       {{/each}}
     </aside>
-  </div> 
-</div>  
+  </div>
+</div>

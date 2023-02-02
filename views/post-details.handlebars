@@ -1,85 +1,83 @@
-<section style="background-color: #eee;">
-  <div class="container my-5 py-5">
+<section>
+  <div class="container my-5">
     <div class="row d-flex justify-content-center">
       <div class="col-md-12 col-lg-10 col-xl-8">
-        <div class="card">
-          <div class="card-body">
-            <div class="d-flex flex-start align-items-center">
-              <img class="rounded-circle shadow-1-strong me-3"
-                src="{{ postDetails.user.avatar }}" alt="avatar" width="60"
-                height="60" />
-              <div>
-                <h6 class="fw-bold text-primary mb-1">{{ postDetails.user.username }}</h6>
-                <p class="text-muted small mb-0">
-                  Shared publicly - {{ moment postDetails.createdAt fromNow=null }}
-                </p>
+        <div class="d-flex flex-start">
+          <img class="rounded-circle shadow me-3" src="{{ postDetails.user.avatar }}" alt="avatar" width="60"
+            height="60" />
+          <div class="card w-100 shadow" style="background-color:var(--d); color:var(--g); border:none;">
+            <div class="card-body p-4">
+              <div class="d-flex flex-start align-items-center">
+                <div>
+                  <h6 class="fs-4 text" style="color:qhite;">{{ postDetails.user.username }}</h6>
+                  <p class="small mb-0" style="color:var(--l)">
+                    Shared publicly - {{ moment postDetails.createdAt fromNow=null }}
+                  </p>
+                </div>
+              </div>
+              <h4 class="mt-3 fs-4 text" style="color:white;">{{ postDetails.title }}</h4>
+              <p class="mt-3 mb-4 pb-2">
+                {{ postDetails.description }}
+              </p>
+              <div class="small d-flex justify-content-start">
+                <button class="d-flex align-items-center me-3 text-decoration-none btn btn-link  font-weight-bold"
+                  style="color:var(--l)" id="like-post">
+                  <i class="fas fa-thumbs-up me-1" style="color:var(--l)"></i>
+                  {{ postDetails.total_likes }}
+                </button>
               </div>
             </div>
-            <h4 class="mt-3 mb-4 pb-2">{{ postDetails.title }}</h4>
-            <p class="mt-3 mb-4 pb-2">
-             {{ postDetails.description }}
-            </p>
-
-            <div class="small d-flex justify-content-start">
-              <button class="d-flex align-items-center me-3 text-decoration-none btn btn-link" id="like-post">
-                <i class="fas fa-thumbs-up me-1"></i>
-                {{ postDetails.total_likes }}
-              </button>
-              {{!-- <button class="d-flex align-items-center me-3 text-decoration-none btn btn-link">
-                <i class="fas fa-comment-dots me-1"></i>
-                <p class="mb-0">Comment</p>
-              </button> --}}
-            </div>
-          </div>
-          <div class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
-            <div class="d-flex flex-start w-100">
-              <img class="rounded-circle shadow-1-strong me-3"
-                src="https://i.pinimg.com/474x/7f/e0/fa/7fe0fa9a69e9ee2e0ddda30382c7a630.jpg" alt="avatar" width="40"
-                height="40" />
-              <div class="form-outline w-100">
-                <textarea class="form-control" id="post-comment" rows="4"
-                  style="background: #fff;"></textarea>
-                <label class="form-label" for="textAreaExample">Message</label>
+            <div class="card-footer py-3 border-0" style="background-color:var(--l);">
+              <div class="d-flex flex-start w-100">
+                <img class="rounded-circle shadow-1-strong me-3"
+                  src="https://i.pinimg.com/474x/7f/e0/fa/7fe0fa9a69e9ee2e0ddda30382c7a630.jpg" alt="avatar" width="40"
+                  height="40" />
+                <div class="form-outline w-100">
+                  <textarea class="form-control" id="post-comment" rows="4"
+                    placeholder="Share your response here..."></textarea>
+                </div>
               </div>
-            </div>
-            <div class="float-end mt-2 pt-1">
-              <button type="button" class="btn btn-primary btn-sm" id="submit-post">Post comment</button>
-              <button type="button" class="btn btn-outline-primary btn-sm" id="reset-post">Reset</button>
+              <div class="float-end mt-2 pt-1">
+                <button type="button" class="btn btn-sm" style="background-color:var(--d); color:white;"
+                  id="submit-post">Post comment</button>
+                <button type="button" class="btn btn-sm"
+                  style="background-color:transparent; border:1px solid var(--d); color:var(--d);"
+                  id="reset-post">Reset</button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="row py-5 d-flex justify-content-center">
-      <div class="col-md-12 col-lg-10 col-xl-8">
-        {{#each postDetails.comments as | comment|}}  
-        <div class="d-flex flex-start mb-4">
-          <img class="rounded-circle shadow-1-strong me-3"
-            src="{{ comment.user.avatar }}" alt="avatar" width="65"
-            height="65" />
-          <div class="card w-100">
-            <div class="card-body p-4">
+      <div class="row py-5 d-flex justify-content-center">
+        <div class="col-md-12 col-lg-10 col-xl-8">
+          {{#each postDetails.comments as | comment|}}
+          <div class="d-flex flex-start mb-4">
+            <img class="rounded-circle shadow-1-strong me-3 shadow" src="{{ comment.user.avatar }}" alt="avatar"
+              width="65" height="65" />
+            <div class="card w-100 shadow" style="background-color:var(--l); color:var(--g);">
+              <div class="card-body p-4">
                 <h5>{{ comment.user.username }}</h5>
-                <p class="small">{{ moment comment.createdAt fromNow=null}}</p>
+                <p class="small" style="color:var(--d);">{{ moment comment.createdAt fromNow=null}}</p>
                 <p>
                   {{ comment.comment }}
-                </p> 
+                </p>
                 {{#eq comment.user_id compare=../user.id }}
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="d-flex align-items-center">
-                    <button class="link-muted btn btn-link text-decoration-none me-2 delete-comment" onclick="deleteComment(this, {{ comment.id }})"><i class="fa fa-trash me-1"></i></button>
+                    <button class="link-muted btn btn-link text-decoration-none me-2 delete-comment"
+                      onclick="deleteComment(this, {{ comment.id }})"><i class="fa fa-trash me-1"></i></button>
                   </div>
-                  <button class="link-muted btn btn-link text-decoration-none edit-comment"><i class="fas fa-pen me-1"></i></button>
+                  <button class="link-muted btn btn-link text-decoration-none edit-comment"><i
+                      class="fas fa-pen me-1"></i></button>
                 </div>
                 {{/eq}}
-            </div>
-            {{#eq comment.user_id compare=../user.id }}
-              <div class="card-footer border-0 d-none" style="background-color: #f8f9fa;">
+              </div>
+              {{#eq comment.user_id compare=../user.id }}
+              <div class="card-footer border-0 d-none" style="background-color:var(--l);">
                 <div class="d-flex flex-start w-100">
                   <img class="rounded-circle shadow-1-strong me-3"
-                    src="https://i.pinimg.com/474x/7f/e0/fa/7fe0fa9a69e9ee2e0ddda30382c7a630.jpg" alt="avatar" width="40"
-                    height="40" />
+                    src="https://i.pinimg.com/474x/7f/e0/fa/7fe0fa9a69e9ee2e0ddda30382c7a630.jpg" alt="avatar"
+                    width="40" height="40" />
                   <div class="form-outline w-100">
                     <textarea class="form-control edit-comment" rows="4"
                       style="background: #fff;">{{ comment.comment }}</textarea>
@@ -87,19 +85,23 @@
                   </div>
                 </div>
                 <div class="float-end mt-2 pt-1">
-                  <button type="button" class="btn btn-primary btn-sm submit-edit-comment" onclick="editComment(this, {{comment.id}})">Edit comment</button>
-                  <button type="button" class="btn btn-outline-primary btn-sm cancel-edit-comment" onclick="cancelEditComment(this)">Cancel</button>
+                  <button type="button" class="btn btn-sm submit-edit-comment"
+                    style="background-color:var(--d); color:white;" onclick="editComment(this, {{comment.id}})">Edit
+                    comment</button>
+                  <button type="button" class="btn btn-sm cancel-edit-comment" onclick="cancelEditComment(this)"
+                    style="background-color:transparent; border:1px solid var(--d); color:var(--d);">Cancel</button>
                 </div>
               </div>
-            {{/eq}}  
+              {{/eq}}
+            </div>
           </div>
+          {{/each}}
         </div>
-        {{/each}}
       </div>
     </div>
   </div>
-
 </section>
+
 <script type="text/javascript" src="/js/services/comments_api.js"></script>
 <script type="text/javascript" src="/js/dispatcher/comments.js"></script>
 <script type="text/javascript" src="/js/ui/comments.js"></script>

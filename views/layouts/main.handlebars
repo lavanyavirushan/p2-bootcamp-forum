@@ -15,7 +15,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@200&display=swap" rel="stylesheet">
-    {{!--
     <link rel="stylesheet" href="../css/newstyle.css" />
     <style>
         :root {
@@ -25,7 +24,6 @@
             --g: rgb(224, 225, 221);
         }
     </style>
-
 </head>
 
 <body class="d-flex flex-column vh-100" style="background-color:var(--g)">
@@ -35,35 +33,28 @@
     <!-- NAVBAR SECTION -->
     <nav class="navbar navbar-light navbar-expand-lg" style="background-color: var(--l)">
         <div class="container-fluid">
-            <!-- SEARCH BAR SECTION -->
-            <form class="d-flex">
-                <input class="form-control mx-3" type="search" placeholder="Search for a category" aria-label="Search">
-                <button class="btn btn-outline-success"
-                    style="background-color: var(--m); color:white; border: 2px solid var(--d)"
-                    type="submit">Search</button>
-            </form>
             <button class="navbar-toggler" style="border:none;" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse ms-5" id="navbarTogglerDemo01">
-                <ul class="navbar-nav me-auto mb-lg-0">
+            <div class="collapse navbar-collapse ms-5 " id="navbarTogglerDemo01">
+                <ul class="navbar-nav me-auto mb-lg-0 ">
                     <li class="nav-item">
-                        <a class="nav-link" style="color:var(--g);" href="/post/create">Create Post</a>
+                        <a class="nav-link mr-4" style="color:var(--g);" href="/post/create">Create Post</a>
                     </li>
                      <li class="nav-item">
-                        <a class="nav-link" style="color:var(--g);" href="/posts">Posts</a>
+                        <a class="nav-link mr-4" style="color:var(--g);" href="/posts">Posts</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" style="color:var(--g);" href="/">Home</a>
+                        <a class="nav-link mr-4 active" style="color:var(--g);" href="/">Home</a>
                     </li>
                     {{#if loggedIn}}
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/profile/account">My Account</a>
+                        <a class="nav-link mr-4" aria-current="page" href="/profile/account">My Account</a>
                     </li>
                     {{/if}}
-                    <li class="nav-item">
+                    <li class="nav-item mr-4">
                         {{#if loggedIn}}
                         <button type="button" class="btn btn-link nav-link" style="color:var(--g);" onclick="logout()" >Logout</button>
                         {{else}}
@@ -75,12 +66,25 @@
         </div>
     </nav>
 
-    <main class="p-3">
+    <main>
         {{{body}}}
     </main>
 
-    <footer class="mt-auto" style="background-color:var(--m); ">
-        <h4 class="text-center p-3" style="color:var(--g)">Copyright Info</h4>
+    <footer class="mt-auto p-2 d-flex justify-content-between" style="background-color:var(--m); ">
+        <div class="d-flex m-1">
+            {{!-- style="width:50px; height:50px;" --}}
+            {{!-- class="p-3 align-middle" --}}
+            <img src="/images/bfdarkmode.png"  width="60" height="60"  />
+            <p class="fs-5 text m-3" style="color:var(--g)">Bootcamp Forum</p>
+        </div>
+        {{!-- p-3 --}}
+        <h4 class="fs-6 text m-4" style="color:var(--g); font-style:italic;">Code Licensed MIT</h4>
+        {{!-- class="p-3" --}}
+        <div class="m-4">
+                <a href="#!" style="color:var(--d);"><i class="fab fa-facebook-f fa-lg mx-4"></i></a>
+                <a href="#!" style="color:var(--d);"><i class="fab fa-twitter fa-lg mx-3"></i></a>
+                <a href="#!" style="color:var(--d);"><i class="fab fa-google fa-lg mx-3"></i></a>
+        </div>
     </footer>
 
     <script
