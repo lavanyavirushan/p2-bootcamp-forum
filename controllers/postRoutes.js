@@ -8,8 +8,7 @@ router.get('/create', withAuth, async (req, res) => {
     try{
         res.render('create-post', {loggedIn: req.session.loggedIn});
     }catch(err){
-        console.log(err)
-        res.status(500).json(err);
+        res.status(500).json({error: "Internal Server Error"});
     }
 });
 
@@ -96,7 +95,7 @@ router.get('/:id', async (req, res) => {
         res.render('post-details', { postDetails: postDetails, user: userDetail, loggedIn: req.session.loggedIn });
   
     }catch(err){
-      res.status(500).json(err);
+      res.status(500).json({error: "Internal Server Error"});
     }
 });
 

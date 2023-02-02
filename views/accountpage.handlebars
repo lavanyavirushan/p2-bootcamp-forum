@@ -1,24 +1,36 @@
-<div class="container my-5 py-5">
-  <div class="card rounded">
-      <div class="d-block justify-content-center">
-          <div class="area1 p-3 py-5" style="background-color: #1b263b; border-top-right-radius: 14px !important;padding-top: 83px !important"> </div>
-          <div class="area2 text-center px-3">
-              <div class="image mr-3" style="top: -62px;position: relative"> <img src={{avatar}} class="rounded-circle" width="200" style="box-shadow: 5px 6px 6px 2px #e9ecef"/>
-                  <h4 class="name mt-3" style="font-size:25px;font-weight:650">{{username}}</h4>
-                  <p class="information mt-3 text-justify" >{{message}}</p>
+<div class="container py-5 h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+    <div class="col col-md-9 col-lg-7 col-xl-5">
+      <div class="card" style="border-radius: 15px;">
+        <div class="card-body p-4">
+          <div class="d-flex" style="color:var(--d);">
+            <div class="flex-shrink-0">
+              <img src={{avatar}} alt="profile photo" class="img-fluid" style="width: 180px; border-radius: 10px;">
+            </div>
+            <div class="flex-grow-1 ms-3">
+              <h5 class="mb-1" style="color:var(--d);">{{username}}</h5>
+              <p class="mb-2 pb-1" style="color: #2b2a2a;">Bootcamp Student</p>
+              <div class="d-flex justify-content-start rounded-3 p-2 mb-2" style="background-color:var(--m);">
+                <p class="information mt-3 text-justify" style="color:white;">{{message}}</p>
               </div>
-              <div class="py-2"> 
-                <a href="/profile/edit"><button class="btn btn-primary">Edit Profile</button></a>
-                <a href="/create-post"><button class="btn btn-outline-primary">Create Post</button></a>
+              <div class="d-flex pt-1">
+                <a href="/profile/edit"><button class="btn btn-lg btn-block"
+                    style="background-color:var(--d); color:white;">Edit Profile</button></a>
+                {{!-- for a future edition where users can view one another's profiles --}}
+                {{!-- <button type="button" class="btn me-1 flex-grow-1"
+                  style="border:2px solid var(--d); color:var(--d);">Chat</button> --}}
+                {{!-- <button type="button" class="btn flex-grow-1" style="color:var(--d);">Follow</button> --}}
               </div>
+            </div>
           </div>
+        </div>
       </div>
-  </div>
-
-    <aside style="margin-top: 15px;">
+    </div>
+    <aside class="users-posts space-from-top space-from-left" style="margin-top: 15px;">
+      <h2 class="fancy-font">My posts</h2>
       {{#each user_posts as |post|}}
-        {{>profile-posts}}
+      {{>profile-posts}}
       {{/each}}
     </aside>
-  </div> 
-</div>  
+  </div>
+</div>

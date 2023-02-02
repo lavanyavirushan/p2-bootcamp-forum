@@ -37,27 +37,62 @@
   </div>
 </div>
 
-<div class="card" style="margin-right:auto; margin-left:auto; margin-top: 20px; width : 900px; border: none;border-radius: 14px !important">
-    <div class="container rounded bg-white mt-5 mb-5">
-        <h3 style="margin-left: 5px">Edit your profile...</h2>
-        <div class="row" style="justify-content: space-around;">
-            <div class="col-md-3 border-right">
-                <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-6" id ="avatar" width="200px" style= "margin-bottom: auto;" src={{avatar}}><h4 class="name mt-3" style="font-size:25px;font-weight:650">{{username}}</h4></div>
-            </div>
-            <div class="col-md-5 border-right">
-                <div class="p-3 py-5">
-                    <div class="row mt-2" >
-                        <div class="col-md-12"><label class="labels fancy-font"></label><input type="text-area"  id="username" class="form-control" placeholder="Enter a new username"></div>
-                        <div class="col-md-12"><label class="labels fancy-font">Message</label><textarea class="form-control" id="message" placeholder="Change profile message"></textarea></div>
-                        <div class="col-md-12"><label class="labels fancy-font">Upload a profile picture</label><input class="form-control" type="file" id="formFile"></div>
-                    </div>
-                    <div class="mt-5 text-center"><button class="btn btn-primary profile-button save" type="button">Save Profile</button></div>
-                </div>
-            </div>
+<div class="card"
+  style="margin-right:auto; margin-left:auto; margin-top: 20px; width : 900px; border: none;border-radius: 14px !important">
+  <div class="container rounded bg-white mt-5 mb-5">
+    <h3 style="margin-left: 5px">Edit your profile...</h2>
+      <div class="row" style="justify-content: space-around;">
+        <div class="col-md-3 border-right" style="background-color:var(--l); color:var(--g)">
+          <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-6"
+              id="avatar" width="200px" style="margin-bottom: auto;" src={{avatar}}>
+            <h4 class="name mt-3" style="font-size:25px;font-weight:650">{{username}}</h4>
+          </div>
         </div>
-    </div>
+
+        <div class="col-md-5 border-right">
+          <h5 class="modal-title" style="color:var(--d);">Update my: </h5>
+          <div class="p-3 py-5">
+            <div class="row mt-2">
+
+              <!-- UPDATE USERNAME -->
+              <div class="row g-3 align-items-center my-1">
+                <div class="col-sm-3">
+                  <label for="username" class="col-form-label" style="color:var(--d);">Username</label>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" id="username" class="form-control">
+                </div>
+              </div>
+
+              <!-- UPDATE MESSAGE -->
+              <div class="row g-3 align-items-center my-1">
+                <div class="col-sm-3">
+                  <label for="message" class="col-form-label" style="color:var(--d);">Message</label>
+                </div>
+                <div class="col-sm-9">
+                  <input type="text" id="message" class="form-control">
+                </div>
+              </div>
+
+              <!-- UPDATE PROFILE PHOTO -->
+              <div class="row g-3 align-items-center">
+                <div class="col-sm-3">
+                  <label for="photo" class="col-form-label" style="color:var(--d);">Profile Photo</label>
+                </div>
+                <div class="col-sm-6 input-group">
+                  <input type="file" id="formFile" class="form-control">
+                  <label class="input-group-text" for="photo">Upload</label>
+                </div>
+              </div>
+            </div>
+            <div class="mt-5 text-center">
+              <button class="btn profile-button save" style="background-color:var(--m); color:white;" type="button">Save Profile</button>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.3.min.js" 
-    integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" 
-    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+  integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 <script src="/js/edit.js"></script>

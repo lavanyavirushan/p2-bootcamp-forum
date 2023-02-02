@@ -9,7 +9,7 @@ router.post('/login', async (req, res) => {
   try {
     // Find the user who matches the posted e-mail address
     const userData = await User.findOne({
-        where: {email:req.body.email}
+      where: { email: req.body.email }
     });
 
     if (!userData) {
@@ -49,9 +49,9 @@ router.put('/edit-name', withAuth, async (req, res) => {
       {username: req.body.username },
       {where: {id : req.session.user_id}}
     )
-    res.status(200).json(user);    
+    res.status(200).json(user);
   } catch (error) {
-    res.status(400).json(error);  
+    res.status(400).json(error);
   }
 });
 
@@ -61,29 +61,29 @@ router.put('/edit-message', withAuth, async (req, res) => {
       {message: req.body.message},
       {where: {id : req.session.user_id}}
     )
-    res.status(200).json(user);      
+    res.status(200).json(user);
   } catch (error) {
-    res.status(400).json(error);  
+    res.status(400).json(error);
   }
 });
 
 router.put('/edit-avatar', async (req, res) => {
   try {
-    console.log(req.body.image);
     const user = await User.update(
       {avatar: req.body.image},
       {where: {id : req.session.user_id}}
     )
-    res.status(200).json(user);      
+    res.status(200).json(user);
   } catch (error) {
-    res.status(400).json(error);  
+    res.status(400).json(error);
   }
 });
+
 
 router.get('/logout', (req, res) => {
   // #swagger.tags = ['User']
   // #swagger.description = 'logout
-  if(req.session.loggedIn){
+  if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).redirect('/login');
     })

@@ -1,7 +1,7 @@
     <!-- CAROUSEL SECTION -->
-    <div id="myCarousel" class="carousel slide p-3" style="background-color:powderblue" data-bs-ride="carousel">
-        <h2 class="text-center">Recommended Categories</h2>
-        <div class="carousel-inner">
+    <div id="myCarousel" class="carousel slide p-3 rounded m-4" style="background-color:var(--m);" data-bs-ride="carousel">
+        <h2 class="text-center" style="color:var(--g);">Recommended Categories</h2>
+        <div class="carousel-inner my-4">
             <!-- CSS -->
             <div class="carousel-item active">
                 <div class="card mx-auto text-center" style="max-width:540px;">
@@ -11,10 +11,9 @@
                                 alt="CSS category link">
                         </div>
                         <div class="col-md-8">
-                            <div class="card-body">
+                            <div class="card-body ">
                                 <h5 class="card-title">CSS</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">"CSS is the language we use to style an HTML document. CSS describes how HTML elements should be displayed." - W3Schools</p>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
                         </div>
@@ -32,8 +31,7 @@
                         <div class="col-md-8">
                             <div class="card-body ">
                                 <h5 class="card-title">NODE JS</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">"As an asynchronous event-driven JavaScript runtime, Node.js is designed to build scalable network applications." - Nodejs</p>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
                         </div>
@@ -51,8 +49,7 @@
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">HEROKU</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">"Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud." - Heroku</p>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
                         </div>
@@ -70,8 +67,8 @@
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">JAVASCRIPT</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">"JavaScript is the world's most popular programming language...the programming language of the Web." - W3Schools"
+                                </p>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
                         </div>
@@ -89,8 +86,7 @@
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">HTML</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural
-                                    lead-in to additional content. This content is a little bit longer.</p>
+                                <p class="card-text">"HTML is the standard markup language for Web pages. With HTML you can create your own Website." - W3Schools</p>
                                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                             </div>
                         </div>
@@ -111,18 +107,17 @@
 
     <!-- BOTTOM CARDS -->
     <div class="col-sm-12">
-        <h2 class="text-center mt-3">Highlighted Posts</h2>
+        <h2 class="text-center mt-3" style="color:var(--d);">Highlighted Posts</h2>
         <div class="card-group">
             {{#each likes as |like|}}
-            <div class="card col-sm-4 m-3 text-center">
-                <div class="card-header" style="background-color:rgb(212, 190, 226)">
-                    Featured Post 
+            <div class="card rounded col-sm-4 m-3 text-center">
+                <div class="card-header" style="background-color:var(--d)">
+                    <h5 class="card-title" style="color:white;">{{like.title}}</h5>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">{{like.title}}</h5>
                     <p class="card-text text-truncate">{{like.description}}</p>
                     <a type="button" class="btn" href="/post/{{like.id}}"
-                        style="background-color:powderblue; border:none; color:black; font-weight:bold;">
+                        style="background-color:var(--m); border:none; color:white;">
                         Click to see full post
                     </a>
                 </div>
