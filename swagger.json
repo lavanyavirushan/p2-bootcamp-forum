@@ -181,6 +181,9 @@
                 },
                 "avatar": {
                   "example": "any"
+                },
+                "message": {
+                  "example": "any"
                 }
               }
             }

@@ -1,4 +1,4 @@
-const likeURL = "http://localhost/api/";
+const likeURL = `${window.location.protocol}//${window.location.host}/api/`;
 
 /**
  * Create a comment for the post

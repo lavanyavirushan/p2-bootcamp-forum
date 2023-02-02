@@ -1,4 +1,4 @@
-const url = "http://localhost/api/";
+const url = `${window.location.protocol}//${window.location.host}/api/`;
 
 /**
  * Create a comment for the post
