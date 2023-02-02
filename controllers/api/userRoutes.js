@@ -3,15 +3,6 @@ const { User } = require('../../models');
 const session = require('express-session');
 const withAuth = require('../../utils/auth');
 
-router.get('/id', async (req, res) => {
-  try {
-    const userId = req.session.user_id;  
-    res.status(200).json(userId);      
-  } catch (error) {
-    res.status(400).json(err);
-  }
-});
-
 router.post('/login', async (req, res) => {
   // #swagger.tags = ['User']
   // #swagger.description = 'Sign in user'

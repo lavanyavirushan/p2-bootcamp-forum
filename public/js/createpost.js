@@ -1,20 +1,6 @@
 $( document ).ready(async function() {
     var myModal = new bootstrap.Modal(document.getElementById('modalCookie1'));
 
-    // let userId = "";
-    // getUserId = async () => {
-    //     const response = await fetch('/api/user/id', {
-    //         method: 'GET',
-    //         headers: {'Content-Type': 'application/json' },
-    //     });
-        
-    //     if (response.ok){
-    //         return response.json().then(function(data){ userId = data;});
-    //     } else {
-    //         return;
-    //     }
-    // }
-
     createPost = (title, description, category_id) => {
         const response =  fetch('/api/posts/', {
             method: 'POST',
@@ -36,7 +22,4 @@ $( document ).ready(async function() {
             createPost(title, description, category_id);
         }
     });
-
-    // getUserId();
-
 });
