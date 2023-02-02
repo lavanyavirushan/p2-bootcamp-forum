@@ -27,10 +27,11 @@ router.get('/', async (req, res) => {
     if(req.session.loggedIn){
         user = req.session.user_id
     }
+    
     res.render('home', { title: 'my other page', likes: featured, userId: user, loggedIn: req.session.loggedIn });
 
   }catch(err){
-    res.status(500).json(err);
+    res.status(500).render('500')
   }
 });
 

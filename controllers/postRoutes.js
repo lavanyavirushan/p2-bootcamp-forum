@@ -42,7 +42,7 @@ router.get('/', async (req, res) => {
     res.render('posts', { posts: post_list, userId: user, loggedIn: req.session.loggedIn });
 
   }catch(err){
-    res.status(500).json(err);
+    res.status(500).render('500')
   }
 });
 
@@ -95,7 +95,7 @@ router.get('/:id', async (req, res) => {
         res.render('post-details', { postDetails: postDetails, user: userDetail, loggedIn: req.session.loggedIn });
   
     }catch(err){
-      res.status(500).json({error: "Internal Server Error"});
+        res.status(404).render('404')
     }
 });
 
