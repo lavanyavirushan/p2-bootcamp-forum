@@ -1,4 +1,8 @@
 const loginFormHandler = async (event) => {
+
+  const loginModal = new bootstrap.Modal(document.getElementById('modalCookie1'));
+
+
   event.preventDefault();
   // Collect values from the login form
   const email = document.querySelector('#username').value.trim();
@@ -19,7 +23,8 @@ const loginFormHandler = async (event) => {
       window.localStorage.setItem('user', JSON.stringify(userResponse.user));
       window.location = "/profile/account";
     } else {
-      console.warning(response.statusText);
+      loginModal.show();
+      console.warn(response.statusText);
     }
   }
 }

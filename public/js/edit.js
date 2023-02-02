@@ -16,7 +16,7 @@ $( document ).ready( function() {
         if (username.length > 0){
             try {
                 const nameResponse = await fetch('/api/user/edit-name', {
-                    method: 'POST',
+                    method: 'PUT',
                     body: JSON.stringify({username}),
                     headers: { 'Content-Type': 'application/json' },            
                 }); 
@@ -37,7 +37,7 @@ $( document ).ready( function() {
 
             try {
                 const messageResponse = await fetch('/api/user/edit-message', {
-                    method: 'POST',
+                    method: 'PUT',
                     body: JSON.stringify({ message}),
                     headers: { 'Content-Type': 'application/json' },
                 });
@@ -57,7 +57,7 @@ $( document ).ready( function() {
 
             try {
                 const avatarResponse = await fetch('/api/user/edit-avatar', {
-                    method: 'POST',
+                    method: 'PUT',
                     body:  JSON.stringify({image}),
                     headers: { 'Content-Type': 'application/json' },
                 });
