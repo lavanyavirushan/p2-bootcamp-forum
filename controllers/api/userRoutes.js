@@ -9,7 +9,7 @@ router.post('/login', async (req, res) => {
   try {
     // Find the user who matches the posted e-mail address
     const userData = await User.findOne({
-        where: {email:req.body.email}
+      where: { email: req.body.email }
     });
 
     if (!userData) {
@@ -46,24 +46,24 @@ router.post('/login', async (req, res) => {
 router.post('/edit-name', withAuth, async (req, res) => {
   try {
     const user = await User.update(
-      {username: req.body.username },
-      {where: {id : req.body.id}}
+      { username: req.body.username },
+      { where: { id: req.body.id } }
     )
-    res.status(200).json(user);    
+    res.status(200).json(user);
   } catch (error) {
-    res.status(400).json(error);  
+    res.status(400).json(error);
   }
 });
 
 router.post('/edit-message', withAuth, async (req, res) => {
   try {
     const user = await User.update(
-      {message: req.body.message},
-      {where: {id : req.body.id}}
+      { message: req.body.message },
+      { where: { id: req.body.id } }
     )
-    res.status(200).json(user);      
+    res.status(200).json(user);
   } catch (error) {
-    res.status(400).json(error);  
+    res.status(400).json(error);
   }
 });
 
@@ -71,19 +71,82 @@ router.post('/edit-avatar', async (req, res) => {
   try {
     console.log(req.body.image);
     const user = await User.update(
-      {avatar: req.body.image},
-      {where: {id : req.body.id}}
+      { avatar: req.body.image },
+      { where: { id: req.body.id } }
     )
-    res.status(200).json(user);      
+    res.status(200).json(user);
   } catch (error) {
-    res.status(400).json(error);  
+    res.status(400).json(error);
   }
 });
+
+// MADDIE ADDED FROM HERE
+router.post('/edit-fname', withAuth, async (req, res) => {
+  // only update if the user has entered something into the input field
+  if (req.body.fname.not().isEmpty()) {
+    try {
+      const user = await User.update(
+        { fname: req.body.fname },
+        { where: { id: req.body.id } }
+      )
+      res.status(200).json(user);
+    } catch (error) {
+      res.status(400).json(error);
+    }
+  }
+});
+
+router.post('/edit-lname', withAuth, async (req, res) => {
+  // only update if the user has entered something into the input field
+  if (req.body.lname.not().isEmpty()) {
+    try {
+      const user = await User.update(
+        { lname: req.body.lname },
+        { where: { id: req.body.id } }
+      )
+      res.status(200).json(user);
+    } catch (error) {
+      res.status(400).json(error);
+    }
+  }
+});
+
+router.post('/edit-email', withAuth, async (req, res) => {
+  // only update if the user has entered something into the input field
+  if (req.body.email.not().isEmpty()) {
+    try {
+      const user = await User.update(
+        { password: req.body.password },
+        { where: { id: req.body.id } }
+      )
+      res.status(200).json(user);
+    } catch (error) {
+      res.status(400).json(error);
+    }
+  }
+});
+
+router.post('/edit-password', withAuth, async (req, res) => {
+  // only update if the user has entered something into the input field
+  if (req.body.password.not().isEmpty()) {
+    try {
+      const user = await User.update(
+        { password: req.body.password },
+        { where: { id: req.body.id } }
+      )
+      res.status(200).json(user);
+    } catch (error) {
+      res.status(400).json(error);
+    }
+  }
+});
+
+// TO HERE
 
 router.get('/logout', (req, res) => {
   // #swagger.tags = ['User']
   // #swagger.description = 'logout
-  if(req.session.loggedIn){
+  if (req.session.loggedIn) {
     req.session.destroy(() => {
       res.status(204).redirect('/login');
     })
@@ -93,26 +156,26 @@ router.get('/logout', (req, res) => {
 });
 
 router.post('/register', async (req, res) => {
-    // #swagger.tags = ['User']
-    // #swagger.description = 'Register new user'
-    if (!req.session.logged_in) {
-      // Creat new user
-        try {
-            const user = await User.create({
-                username: req.body.name,
-                email: req.body.email,
-                password: req.body.password,
-                avatar: req.body.avatar
-            });
-            delete user.dataValues.password
-            res.status(200).json(user);
-        } catch (err) {
-            res.status(400).json({error: "Unable to create an account"});
-        }
-  
-    } else {
-      res.status(404).end();
+  // #swagger.tags = ['User']
+  // #swagger.description = 'Register new user'
+  if (!req.session.logged_in) {
+    // Creat new user
+    try {
+      const user = await User.create({
+        username: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+        avatar: req.body.avatar
+      });
+      delete user.dataValues.password
+      res.status(200).json(user);
+    } catch (err) {
+      res.status(400).json({ error: "Unable to create an account" });
     }
-  });
+
+  } else {
+    res.status(404).end();
+  }
+});
 
 module.exports = router;
