@@ -5,13 +5,13 @@
         <div class="card-body p-4">
           <div class="d-flex" style="color:var(--d);">
             <div class="flex-shrink-0">
-              <img src={{avatar}} alt="profile photo" class="img-fluid" style="width: 180px; border-radius: 10px;">
+              <img src={{user.avatar}} alt="profile photo" class="img-fluid" style="width: 180px; border-radius: 10px;">
             </div>
             <div class="flex-grow-1 ms-3">
-              <h5 class="mb-1" style="color:var(--d);">{{username}}</h5>
+              <h5 class="mb-1" style="color:var(--d);">{{user.username}}</h5>
               <p class="mb-2 pb-1" style="color: #2b2a2a;">Bootcamp Student</p>
               <div class="d-flex justify-content-start rounded-3 p-2 mb-2" style="background-color:var(--m);">
-                <p class="information mt-3 text-justify" style="color:white;">{{message}}</p>
+                <p class="information mt-3 text-justify" style="color:white;">{{user.message}}</p>
               </div>
               <div class="d-flex pt-1">
                 <a href="/profile/edit"><button class="btn btn-lg btn-block"
@@ -26,6 +26,7 @@
         </div>
       </div>
     </div>
+
     <aside class="users-posts space-from-top space-from-left" style="margin-top: 15px;">
       <h2 class="fancy-font">My posts</h2>
       {{#each user_posts as |post|}}

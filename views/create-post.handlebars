@@ -38,37 +38,38 @@
   </div>
 </div>
 
-<section style="margin-top: 30px;" >
+<section class="py-5" >
   <div class="container">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-xl-9">
-        <div class="card" style="border-radius: 15px;"> 
+        <div class="card" style="background-color:var(--l);"> 
           <div class="card-body">
+            <h3>Create New Post</h3>
             <div class="row align-items-center pt-4 pb-3">
-              <div class="col-md-3 ps-5">
+              <div class="col-md-3">
                 <h6 class="mb-0">Post Title</h6>
               </div>
-              <div class="col-md-9 pe-5">
+              <div class="col-md-9">
                 {{!-- imput for title here --}}
                 <input type="text" class="form-control form-control-lg postTitle" />
               </div>
             </div>
             <hr class="mx-n3">
             <div class="row align-items-center py-3">
-              <div class="col-md-3 ps-5">
+              <div class="col-md-3">
                 <h6 class="mb-0">Post Content</h6>
               </div>
-              <div class="col-md-9 pe-5">
+              <div class="col-md-9">
                 {{!-- input for message here --}}
                 <textarea class="form-control"  id="post-content" rows="7" placeholder="Speak your heart out!"></textarea>
               </div>
             </div>
             <hr class="mx-n3">
             <div class="row align-items-center py-3">
-              <div class="col-md-3 ps-5">
+              <div class="col-md-3">
                 <h6 class="mb-0">Select a category</h6>
               </div>
-              <div class="col-md-9 pe-5">
+              <div class="col-md-9">
                 {{!-- input for Select here --}}
                 <select  class ="form-select categoryId">
                     <option selected>Category</option>
@@ -84,9 +85,8 @@
               </div>
             </div>
             <hr class="mx-n3">
-            <div class="px-5 py-4">
-              <button type="submit" id="post-button" class="btn btn-primary btn-lg">Create Post</button>
-            </div>
+            <button type="submit" id="post-button" class="btn btn-primary" style="background-color:var(--d); border-color: background-color:var(--d); float: right;">Create Post</button>
+
           </div>
         </div>
       </div>

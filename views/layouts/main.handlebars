@@ -41,24 +41,24 @@
             <div class="collapse navbar-collapse ms-5 justify-content-center" id="navbarTogglerDemo01">
                 <ul class="navbar-nav me-auto mb-lg-0 ">
                     <li class="nav-item">
-                        <a class="nav-link mr-4 active" style="color:var(--g);" href="/">Home</a>
+                        <a class="nav-link mr-4 text-white" style="color:var(--g);" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link mr-4" style="color:var(--g);" href="/posts">Posts</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link mr-4" style="color:var(--g);" href="/post/create">Create Post</a>
+                        <a class="nav-link mr-4 text-white" style="color:var(--g);" href="/posts">Posts</a>
                     </li>
                     {{#if loggedIn}}
                     <li class="nav-item">
-                        <a class="nav-link mr-4" aria-current="page" href="/profile/account">My Account</a>
+                        <a class="nav-link mr-4 text-white" href="/post/create">Create Post</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mr-4 text-white" style="color:var(--g);" href="/profile/account">My Account</a>
                     </li>
                     {{/if}}
-                    <li class="nav-item mr-4">
+                    <li class="nav-item mr-4 ">
                         {{#if loggedIn}}
-                        <button type="button" class="btn btn-link nav-link" style="color:var(--g);" onclick="logout()" >Logout</button>
+                        <button type="button" class="btn btn-link nav-link text-white" style="color:var(--g);" onclick="logout()" >Logout</button>
                         {{else}}
-                        <a class="nav-link" style="color:var(--g);" href="/login">Login</a>
+                        <a class="nav-link text-white" style="color:var(--g);" href="/login">Login</a>
                         {{/if}}
                     </li>
                 </ul>
@@ -70,22 +70,22 @@
         {{{body}}}
     </main>
 
-    <footer class="mt-auto p-2 d-flex justify-content-between" style="background-color:var(--m); ">
-        <div class="d-flex m-1">
-            {{!-- style="width:50px; height:50px;" --}}
-            {{!-- class="p-3 align-middle" --}}
-            <img src="/images/bfdarkmode.png"  width="60" height="60"  />
-            <p class="fs-5 text m-3" style="color:var(--g)">Bootcamp Forum</p>
-        </div>
-        {{!-- p-3 --}}
-        <h4 class="fs-6 text m-4" style="color:var(--g); font-style:italic;">Code Licensed MIT</h4>
-        {{!-- class="p-3" --}}
-        <div class="m-4">
-                <a href="#!" style="color:var(--d);"><i class="fab fa-facebook-f fa-lg mx-4"></i></a>
-                <a href="https://twitter.com/w3schoolsonline?lang=en" style="color:var(--d);"><i class="fab fa-twitter fa-lg mx-3"></i></a>
-                <a href="#!" style="color:var(--d);"><i class="fab fa-google fa-lg mx-3"></i></a>
-        </div>
-    </footer>
+
+<footer class="text-center text-lg-start" style="background-color:var(--m);">
+  <div class="text-center p-2" style="background-color:var(--m);">
+    <a class="text-dark" href="/">
+        <img src="/images/bfdarkmode.png"  width="40" height="40"  />
+    </a>
+    © 2020 Copyright
+  </div>
+
+  <div class="text-center p-2" style="background-color:var(--m);">
+    <a href="https://www.facebook.com/universitytoronto/" style="color:var(--d);"><i class="fab fa-facebook-f fa-lg mx-4"></i></a>
+    <a href="https://twitter.com/w3schoolsonline?lang=en" style="color:var(--d);"><i class="fab fa-twitter fa-lg mx-3"></i></a>
+    <a href="https://stackoverflow.com/questions/tagged/javascript" style="color:var(--d);"><i class="fab fa-stack-overflow fa-lg mx-3"></i></a>
+  </div>
+  <!-- Copyright -->
+</footer>
 
     <script
   src="https://code.jquery.com/jquery-3.6.3.js"
