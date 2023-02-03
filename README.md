@@ -32,6 +32,7 @@ This application uses Node.js and a MySQL database, which is hosted & deployed o
 ## Demo
 
 [Deployed Heroku app](https://p2-bootcamp-forum.herokuapp.com/)
+[Swagger API Documentation](http://p2-bootcamp-forum.herokuapp.com/docs)
 
 ## Usage
 

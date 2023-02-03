@@ -45,7 +45,10 @@
       }
     },
     "/user/edit-name": {
-      "post": {
+      "put": {
+        "tags": [
+          "User"
+        ],
         "description": "",
         "parameters": [
           {
@@ -55,9 +58,6 @@
               "type": "object",
               "properties": {
                 "username": {
-                  "example": "any"
-                },
-                "id": {
                   "example": "any"
                 }
               }
@@ -78,7 +78,10 @@
       }
     },
     "/user/edit-message": {
-      "post": {
+      "put": {
+        "tags": [
+          "User"
+        ],
         "description": "",
         "parameters": [
           {
@@ -88,9 +91,6 @@
               "type": "object",
               "properties": {
                 "message": {
-                  "example": "any"
-                },
-                "id": {
                   "example": "any"
                 }
               }
@@ -111,7 +111,10 @@
       }
     },
     "/user/edit-avatar": {
-      "post": {
+      "put": {
+        "tags": [
+          "User"
+        ],
         "description": "",
         "parameters": [
           {
@@ -121,9 +124,6 @@
               "type": "object",
               "properties": {
                 "image": {
-                  "example": "any"
-                },
-                "id": {
                   "example": "any"
                 }
               }
