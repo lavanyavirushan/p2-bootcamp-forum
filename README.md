@@ -131,7 +131,7 @@ github profile: https://github.com/PhilipVKurian
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/lavanyavirushan/p2-bootcamp-forum.svg?style=for-the-badge
-[contributors-url]: https://github.com/lavanyavirushan/project-1-fitness-lind/graphs/contributors
+[contributors-url]: https://github.com/lavanyavirushan/p2-bootcamp-forum/graphs/contributors
 [issues-shield]: https://img.shields.io/github/issues/lavanyavirushan/project-1-fitness-lind.svg?style=for-the-badge
 [issues-url]: https://github.com/lavanyavirushan/project-1-fitness-lind/issues
 [license-shield]: https://img.shields.io/github/license/lavanyavirushan/project-1-fitness-lind.svg?style=for-the-badge
