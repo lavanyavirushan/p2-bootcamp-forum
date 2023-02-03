@@ -131,9 +131,10 @@ github profile: https://github.com/PhilipVKurian
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/lavanyavirushan/p2-bootcamp-forum.svg?style=for-the-badge
+[contributors-url]: https://github.com/lavanyavirushan/p2-bootcamp-forum/graphs/contributors
 [issues-shield]: https://img.shields.io/github/issues/lavanyavirushan/p2-bootcamp-forum.svg?style=for-the-badge
 [issues-url]: https://github.com/lavanyavirushan/p2-bootcamp-forum/issues
 [license-shield]: https://img.shields.io/github/license/lavanyavirushan/p2-bootcamp-forum.svg?style=for-the-badge
-[license-url]: https://img.shields.io/github/license/lavanyavirushan/p2-bootcamp-forum.svg?style=for-the-badge
+[license-url]: https://github.com/lavanyavirushan/p2-bootcamp-forum/blob/main/LICENSE
 [github-shield]: https://img.shields.io/badge/-github-black.svg?style=for-the-badge&logo=github&colorB=555
 [github-url]: https://github.com/lavanyavirushan/p2-bootcamp-forum.git
