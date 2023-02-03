@@ -131,20 +131,10 @@ github profile: https://github.com/PhilipVKurian
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/lavanyavirushan/p2-bootcamp-forum.svg?style=for-the-badge
-[contributors-url]: https://github.com/lavanyavirushan/project-1-fitness-lind/graphs/contributors
-[issues-shield]: https://img.shields.io/github/issues/lavanyavirushan/project-1-fitness-lind.svg?style=for-the-badge
-[issues-url]: https://github.com/lavanyavirushan/project-1-fitness-lind/issues
-[license-shield]: https://img.shields.io/github/license/lavanyavirushan/project-1-fitness-lind.svg?style=for-the-badge
-[license-url]: https://github.com/lavanyavirushan/project-1-fitness-lind/blob/main/LICENSE
+[contributors-url]: https://github.com/lavanyavirushan/p2-bootcamp-forum/graphs/contributors
+[issues-shield]: https://img.shields.io/github/issues/lavanyavirushan/p2-bootcamp-forum.svg?style=for-the-badge
+[issues-url]: https://github.com/lavanyavirushan/p2-bootcamp-forum/issues
+[license-shield]: https://img.shields.io/github/license/lavanyavirushan/p2-bootcamp-forum.svg?style=for-the-badge
+[license-url]: https://github.com/lavanyavirushan/p2-bootcamp-forum/blob/main/LICENSE
 [github-shield]: https://img.shields.io/badge/-github-black.svg?style=for-the-badge&logo=github&colorB=555
-[github-url]: https://github.com/lavanyavirushan/project-1-fitness-lind
-[product-screenshot]: https://user-images.githubusercontent.com/63548697/204180902-6db65c02-85e2-4dd2-96c9-a5aa6fbf1c83.png
-[product-screenshot-bmi]: https://user-images.githubusercontent.com/63548697/204181285-a4e3df78-cea2-4824-83d0-5845a55c2e37.png
-[product-screenshot-workouts]: https://user-images.githubusercontent.com/63548697/204181506-b39d7a89-64a2-4c97-84a1-435c8e3d72c5.png
-[product-screenshot-workout-video]: https://user-images.githubusercontent.com/63548697/204182036-1013c6ad-c526-48ed-b62a-cf5e2ffb7be0.png
-[product-screenshot-mealplans]: https://user-images.githubusercontent.com/63548697/204182335-bdc68f3b-bbb0-4e81-95b8-3ea8161050d6.png
-[product-screenshot-about]: https://user-images.githubusercontent.com/63548697/204182458-ce898edf-8756-40e3-a973-44e7ccd192d9.png
-[tailwindcss.com]: https://img.shields.io/badge/Tailwindcss-F0F0F0?style=for-the-badge&logo=tailwindcss&logoColor=light-blue
-[tailwindcss-url]: https://tailwindcss.com/
-[jquery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[jquery-url]: https://jquery.com
+[github-url]: https://github.com/lavanyavirushan/p2-bootcamp-forum.git
