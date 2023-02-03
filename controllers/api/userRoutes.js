@@ -44,6 +44,7 @@ router.post('/login', async (req, res) => {
 });
 
 router.put('/edit-name', withAuth, async (req, res) => {
+  // #swagger.tags = ['User']
   try {
     const user = await User.update(
       {username: req.body.username },
@@ -56,6 +57,7 @@ router.put('/edit-name', withAuth, async (req, res) => {
 });
 
 router.put('/edit-message', withAuth, async (req, res) => {
+  // #swagger.tags = ['User']
   try {
     const user = await User.update(
       {message: req.body.message},
@@ -68,6 +70,7 @@ router.put('/edit-message', withAuth, async (req, res) => {
 });
 
 router.put('/edit-avatar', async (req, res) => {
+  // #swagger.tags = ['User']
   try {
     const user = await User.update(
       {avatar: req.body.image},
