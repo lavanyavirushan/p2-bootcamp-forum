@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const sequelize = require('../config/connection');
-const { Category, Comment, User, UserPost } = require('../models');
+const { Sequelize } = require('sequelize');
+const { Category, Comment, User, UserPost, Likes } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/account', withAuth, async (req, res) => {
@@ -8,28 +8,37 @@ router.get('/account', withAuth, async (req, res) => {
       // Find the logged in user based on the session ID
       const userData = await User.findByPk(req.session.user_id, {
         attributes: {exclude: ['password']},
-        // include: [{
-        //   model: UserPost, 
-        //   where: {
-        //     user_id: req.session.user_id
-        //   }
-        // }]
       });
 
-      const user_posts_res = await UserPost.findAll({
-        where: {
-          user_id: req.session.user_id
+      const user_posts_res = await UserPost.findAll(
+        {
+            where:{
+                user_id: req.session.user_id
+            },
+            include: [
+                Category, 
+                { 
+                    model: Likes,
+                    attributes: []
+                }     
+            ], 
+            attributes: { 
+                include: [[Sequelize.fn('COUNT', Sequelize.col('likes.id')), 'total_likes']],
+                exclude: ['user_id', 'category_id'] 
+            },
+            group: ['user_post.id'],
+            raw : true ,
+            nest : true
         }
-      })
-      console.log(user_posts_res)
-      user_posts_res.get
+      );
+      
       // Get all the posts associated with the user
       const user = (userData == null) ? [] : userData.get({ plain: true });
       const user_post = (user_posts_res == null) ? [] : user_posts_res;
       
       res.render('accountpage', {
         user: user,     
-        user_post: user_post,
+        user_posts: user_post,
         loggedIn: true
       });
     } catch (err) {
